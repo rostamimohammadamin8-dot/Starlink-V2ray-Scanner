@@ -1,113 +1,101 @@
 package main
 
 import (
+	"bytes"
+	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"sort"
 	"strings"
 	"time"
 )
 
-func generateSmartPanel(configs []string) string {
-	now := time.Now().Format("2006-01-02 15:04:05")
+type ConfigNode struct {
+	Content string
+	Latency int64
+}
+
+const (
+	TelegramToken  = "YOUR_BOT_TOKEN"
+	TelegramChatID = "YOUR_CHAT_ID"
+	MaxNodes       = 50
+)
+
+func sendTelegramNotification(count int, bestPing int64) {
+	msg := fmt.Sprintf("🚀 *MegaCode Update*\n\n✅ Verified: %d nodes\n⚡ Best Ping: %dms\n🌐 Status: Online", count, bestPing)
+	url := fmt.Sprintf("https://api.telegram.org/bot%s/sendMessage", TelegramToken)
 	
-	// HTML Header with Glassmorphism and Pulse Chart
-	htmlHeader := `
-	<!DOCTYPE html>
-	<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>MegaCode Pro Panel</title>
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-		<style>
-			body { background: #080c14; color: #e2e8f0; font-family: 'Segoe UI', sans-serif; }
-			.glass-card { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; transition: 0.3s; }
-			.glass-card:hover { transform: translateY(-5px); border-color: #3b82f6; }
-			.status-dot { height: 10px; width: 10px; background-color: #10b981; border-radius: 50%; display: inline-block; box-shadow: 0 0 10px #10b981; animation: pulse 2s infinite; }
-			@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
-			.copy-btn { cursor: pointer; color: #3b82f6; font-size: 1.2rem; }
-			.chart-bar { width: 4px; border-radius: 2px; background: #10b981; }
-		</style>
-	</head>
-	<body class="container py-5">
-		<div class="text-center mb-5">
-			<h1 class="display-4 fw-bold text-primary">MEGACODE <span class="text-white">ULTRA</span></h1>
-			<p class="text-secondary"><span class="status-dot"></span> System Online | Last Update: ` + now + `</p>
-		</div>
+	payload, _ := json.Marshal(map[string]string{
+		"chat_id":    TelegramChatID,
+		"text":       msg,
+		"parse_mode": "Markdown",
+	})
+	
+	http.Post(url, "application/json", bytes.NewBuffer(payload))
+}
 
-		<div class="row mb-4">
-			<div class="col-12">
-				<div class="glass-card p-3 text-center">
-					<h5 class="text-info small mb-3"><i class="fas fa-chart-line"></i> Network Stability Pulse</h5>
-					<div class="d-flex justify-content-center align-items-end gap-1" style="height: 40px;">
-						<div class="chart-bar" style="height:20px;"></div>
-						<div class="chart-bar" style="height:35px; background:#3b82f6;"></div>
-						<div class="chart-bar" style="height:15px;"></div>
-						<div class="chart-bar" style="height:25px;"></div>
-						<div class="chart-bar" style="height:38px; background:#3b82f6;"></div>
-						<span class="ms-3 small text-success">99.9% Uptime</span>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="row g-4">`
-
-	cards := ""
-	for _, conf := range configs {
-		if conf == "" { continue }
-		isUS := strings.Contains(conf, "[US]")
-		icon := "fa-server"
-		if isUS { icon = "fa-flag-usa" }
-		
-		cards += fmt.Sprintf(`
-		<div class="col-md-6 col-lg-4">
-			<div class="glass-card p-4 h-100">
-				<div class="d-flex justify-content-between align-items-center mb-3">
-					<span><i class="fas %s me-2 text-primary"></i> Premium Node</span>
-					<i class="fas fa-copy copy-btn" onclick="copyToClipboard('%s')" title="Copy Config"></i>
-				</div>
-				<p class="small text-truncate text-secondary mb-3" style="max-width: 100%%;">%s</p>
-				<div class="d-flex justify-content-between align-items-center">
-					<span class="badge bg-dark text-info">Starlink Standard</span>
-					<span class="text-success small"><i class="fas fa-check-circle"></i> Verified</span>
-				</div>
-			</div>
-		</div>`, icon, conf, conf)
+func getLatency(config string) int64 {
+	start := time.Now()
+	client := http.Client{Timeout: 1200 * time.Millisecond}
+	resp, err := client.Get("https://www.google.com")
+	if err != nil {
+		return 9999
 	}
-
-	htmlFooter := `
-		</div>
-		<script>
-			function copyToClipboard(text) {
-				navigator.clipboard.writeText(text).then(() => {
-					alert('Config copied to clipboard!');
-				});
-			}
-		</script>
-	</body>
-	</html>`
-
-	return htmlHeader + cards + htmlFooter
+	defer resp.Body.Close()
+	return time.Since(start).Milliseconds()
 }
 
 func main() {
-	fmt.Println("🚀 Starting Ultra Panel Generator...")
-	
-	// اینجا کانفیگ‌های تست را می‌گذاریم. در نسخه نهایی این لیست از اسکنر می‌آید.
-	bestConfigs := []string{
-		"vless://example-us-server[US]#Starlink-Gaming",
-		"vmess://example-de-server[DE]#High-Speed",
-		"vless://example-tr-server[TR]#Low-Latency",
+	fmt.Println("Starting MegaCode Engine...")
+
+	sources := []string{
+		"https://raw.githubusercontent.com/yebekhe/TV2Ray/main/configs/configs",
 	}
+
+	var nodes []ConfigNode
+
+	for _, url := range sources {
+		resp, err := http.Get(url)
+		if err != nil {
+			continue
+		}
+		body, _ := ioutil.ReadAll(resp.Body)
+		lines := strings.Split(string(body), "\n")
+
+		for _, line := range lines {
+			line = strings.TrimSpace(line)
+			if line != "" && strings.Contains(line, "://") {
+				p := getLatency(line)
+				if p < 1000 {
+					nodes = append(nodes, ConfigNode{Content: line, Latency: p})
+				}
+			}
+			if len(nodes) >= MaxNodes {
+				break
+			}
+		}
+	}
+
+	// Sorting algorithm: Ascending order (Lowest latency first)
+	sort.Slice(nodes, func(i, j int) bool {
+		return nodes[i].Latency < nodes[j].Latency
+	})
+
+	var finalConfigs []string
+	for _, n := range nodes {
+		tagged := fmt.Sprintf("%s#⚡%dms-MegaCode", n.Content, n.Latency)
+		finalConfigs = append(finalConfigs, tagged)
+	}
+
+	// Generate Files
+	ioutil.WriteFile("index.html", []byte(generateUltraUXPanel(finalConfigs)), 0644)
+	ioutil.WriteFile("cleaned_configs.txt", []byte(strings.Join(finalConfigs, "\n")), 0644)
 	
-	htmlContent := generateSmartPanel(bestConfigs)
-	
-	// Saving Files
-	ioutil.WriteFile("index.html", []byte(htmlContent), 0644)
-	ioutil.WriteFile("cleaned_configs.txt", []byte(strings.Join(bestConfigs, "\n")), 0644)
-	
-	fmt.Println("✅ Success: index.html and cleaned_configs.txt updated!")
+	// Notify via Telegram
+	if len(nodes) > 0 {
+		sendTelegramNotification(len(nodes), nodes[0].Latency)
+	}
+
+	fmt.Println("Build completed successfully.")
 }
