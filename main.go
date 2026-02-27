@@ -1,8 +1,6 @@
 package main
 
 import (
-	"bytes"
-	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"net/http"
@@ -17,9 +15,7 @@ type ConfigNode struct {
 }
 
 const (
-	TelegramToken  = "YOUR_BOT_TOKEN"
-	TelegramChatID = "YOUR_CHAT_ID"
-	MaxNodes       = 50
+	MaxNodes = 50
 )
 
 func generateFinalPanel(configs []string, bestPing int64) string {
@@ -42,7 +38,8 @@ func generateFinalPanel(configs []string, bestPing int64) string {
 			.glass-card { background: var(--glass); backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; transition: 0.3s; }
 			.glass-card:hover { border-color: var(--primary); transform: translateY(-3px); }
 			.stat-box { background: rgba(59, 130, 246, 0.1); border-radius: 15px; padding: 15px; border: 1px solid rgba(59, 130, 246, 0.2); }
-			.btn-main { background: var(--primary); border: none; border-radius: 12px; padding: 12px 24px; font-weight: bold; color: white; text-decoration: none; display: inline-block; }
+			.btn-main { background: var(--primary); border: none; border-radius: 12px; padding: 12px 24px; font-weight: bold; color: white; text-decoration: none; display: inline-block; transition: 0.3s; }
+			.btn-main:hover { background: #2563eb; box-shadow: 0 0 15px rgba(59, 130, 246, 0.4); }
 			.visitor-badge { background: rgba(255,255,255,0.03); padding: 8px 20px; border-radius: 50px; border: 1px solid rgba(255,255,255,0.08); display: inline-block; margin-top: 30px; }
 			.node-rank { background: var(--primary); color: white; padding: 2px 8px; border-radius: 6px; font-size: 0.7rem; font-weight: bold; }
 		</style>
@@ -98,7 +95,7 @@ func generateFinalPanel(configs []string, bestPing int64) string {
 		<div class="text-center mt-5">
 			<div class="visitor-badge animate__animated animate__fadeIn">
 				<i class="fas fa-chart-line text-primary me-2"></i> GLOBAL REACH: 
-				<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://rostamimohammadamin8.github.io/Starlink-Scanner/&count_bg=%%233B82F6&title_bg=%%23080C14&icon=&icon_color=%%23E7E7E7&title=hits&edge_flat=true" alt="Hits" style="vertical-align: middle;"/>
+				<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://rostamimohammadamin8.github.io/Starlink-V2ray-Scanner/&count_bg=%%233B82F6&title_bg=%%23080C14&icon=&icon_color=%%23E7E7E7&title=hits&edge_flat=true" alt="Hits" style="vertical-align: middle;"/>
 			</div>
 			<p class="small text-muted mt-3">Last System Pulse: ` + now + ` | Build v5.0 Stable</p>
 		</div>
@@ -149,14 +146,15 @@ func main() {
 
 	var nodes []ConfigNode
 	for _, url := range sources {
-		resp, _ := http.Get(url)
+		resp, err := http.Get(url)
+		if err != nil { continue }
 		body, _ := ioutil.ReadAll(resp.Body)
 		lines := strings.Split(string(body), "\n")
 		for _, line := range lines {
 			line = strings.TrimSpace(line)
 			if strings.Contains(line, "://") {
 				p := getLatency(line)
-				if p < 1000 {
+				if p < 1500 {
 					nodes = append(nodes, ConfigNode{line, p})
 				}
 			}
@@ -175,4 +173,5 @@ func main() {
 
 	ioutil.WriteFile("index.html", []byte(generateFinalPanel(final, top)), 0644)
 	ioutil.WriteFile("cleaned_configs.txt", []byte(strings.Join(final, "\n")), 0644)
+	fmt.Println("Build completed successfully without Telegram integration.")
 }
