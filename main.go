@@ -34,7 +34,7 @@ func generateFinalPanel(configs []string, bestPing int64) string {
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 		<style>
 			:root { --primary: #3b82f6; --bg: #080c14; --glass: rgba(30, 41, 59, 0.5); }
-			body { background: var(--bg); color: #f1f5f9; font-family: 'Segoe UI', sans-serif; }
+			body { background: var(--bg); color: #f1f5f9; font-family: 'Inter', sans-serif; }
 			.glass-card { background: var(--glass); backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; transition: 0.3s; }
 			.glass-card:hover { border-color: var(--primary); transform: translateY(-3px); }
 			.stat-box { background: rgba(59, 130, 246, 0.1); border-radius: 15px; padding: 15px; border: 1px solid rgba(59, 130, 246, 0.2); }
@@ -173,5 +173,5 @@ func main() {
 
 	ioutil.WriteFile("index.html", []byte(generateFinalPanel(final, top)), 0644)
 	ioutil.WriteFile("cleaned_configs.txt", []byte(strings.Join(final, "\n")), 0644)
-	fmt.Println("Build completed successfully.")
+	fmt.Println("Build Successful!")
 }
