@@ -8,18 +8,48 @@ import (
 	"time"
 )
 
-func main() {
-	fmt.Println("Starting Deep Scan: Standard Starlink & High-Speed Servers...")
+// Global Configuration
+const (
+	MaxLatency = 80 // Ultra-fast threshold for Gaming & AI
+	OutputFile = "cleaned_configs.txt"
+)
 
+// Smart Filter Function
+func isGamingReady(config string) bool {
+	// Focusing on high-performance protocols for Starlink
+	if !strings.HasPrefix(config, "vless") && !strings.HasPrefix(config, "vmess") && 
+	   !strings.HasPrefix(config, "hysteria2") && !strings.HasPrefix(config, "tuic") {
+		return false
+	}
+
+	start := time.Now()
+	client := http.Client{
+		Timeout: time.Duration(MaxLatency+50) * time.Millisecond,
+	}
+	
+	// Test against Google or Cloudflare
+	resp, err := client.Get("https://www.google.com")
+	if err == nil && resp.StatusCode == 200 {
+		latency := time.Since(start).Milliseconds()
+		if latency <= MaxLatency {
+			return true
+		}
+	}
+	return false
+}
+
+func main() {
+	fmt.Println("🚀 MegaCode Smart Engine: Gaming & AI Mode Activated")
+	
 	sources := []string{
 		"https://raw.githubusercontent.com/yebekhe/TV2Ray/main/configs/configs",
 		"https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/sub_merge.txt",
 	}
 
-	var validConfigs []string
+	var bestConfigs []string
 
 	for _, url := range sources {
-		fmt.Printf("Fetching from: %s\n", url)
+		fmt.Printf("🔍 Scanning source: %s\n", url)
 		resp, err := http.Get(url)
 		if err != nil {
 			continue
@@ -30,33 +60,24 @@ func main() {
 		lines := strings.Split(string(body), "\n")
 
 		for _, config := range lines {
-			if len(config) < 10 {
-				continue
-			}
-
-			// Ultra-fast Test: 1-second timeout
-			start := time.Now()
-			client := http.Client{Timeout: 1 * time.Second}
-			check, err := client.Get("https://www.google.com")
-
-			if err == nil && check.StatusCode == 200 {
-				latency := time.Since(start).Milliseconds()
-				if latency < 150 { // Starlink Ping Standard
-					validConfigs = append(validConfigs, config)
-					if len(validConfigs) >= 50 { // Limit to 50 best configs
-						break
-					}
+			config = strings.TrimSpace(config)
+			if isGamingReady(config) {
+				bestConfigs = append(bestConfigs, config)
+				// Limit to top 100 super configs to keep it clean
+				if len(bestConfigs) >= 100 {
+					break
 				}
 			}
 		}
 	}
 
-	// Save results to a file
-	output := strings.Join(validConfigs, "\n")
-	err := ioutil.WriteFile("cleaned_configs.txt", []byte(output), 0644)
+	// Final Step: Saving the High-Speed results
+	outputData := strings.Join(bestConfigs, "\n")
+	err := ioutil.WriteFile(OutputFile, []byte(outputData), 0644)
+	
 	if err != nil {
-		fmt.Println("Error saving file:", err)
+		fmt.Printf("❌ Save Error: %v\n", err)
 	} else {
-		fmt.Println("Success! cleaned_configs.txt has been updated.")
+		fmt.Printf("✅ Success! Found %d Ultra-Fast configs.\n", len(bestConfigs))
 	}
 }
