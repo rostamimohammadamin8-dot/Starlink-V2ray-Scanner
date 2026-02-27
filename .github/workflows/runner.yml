@@ -1,8 +1,12 @@
-name: Starlink MegaCode Runner
+name: MegaCode Ultra Engine
+
 on:
   schedule:
-    - cron: '0 */6 * * *' # Auto-run every 6 hours
-  workflow_dispatch:
+    - cron: '0 */6 * * *' # Runs every 6 hours
+  workflow_dispatch: # Allows you to run it manually for testing
+
+permissions:
+  contents: write # Crucial for saving the generated Web App files
 
 jobs:
   build-and-deploy:
@@ -11,18 +15,23 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Setup Go
+      - name: Setup Go Environment
         uses: actions/setup-go@v5
         with:
           go-version: '1.21'
+          cache: true # Speeds up subsequent runs
 
-      - name: Run Deep Scanner
+      - name: Execute MegaCode Engine
         run: go run main.go
+        env:
+          # If you added Telegram, put your secrets in Repo Settings > Secrets
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
 
-      - name: Commit and Push Results
+      - name: Deploy to GitHub Pages
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add cleaned_configs.txt
-          git commit -m "Auto-update: High-speed configs [$(date)]" || exit 0
+          git config --global user.name "MegaCode-Bot"
+          git config --global user.email "bot@megacode.ultra"
+          git add index.html cleaned_configs.txt
+          git commit -m "🚀 Ultra UX Update: Nodes Re-Sorted [$(date)]" || echo "No changes to commit"
           git push
