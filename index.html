@@ -5,7 +5,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>MegaCode Ultra Dashboard</title>
-		<link rel="manifest" href="data:application/manifest+json,{"name":"MegaCode Ultra","short_name":"MegaCode","start_url":".","display":"standalone","background_color":"#080c14","theme_color":"#3b82f6"}">
+		<link rel="manifest" href='data:application/manifest+json,{"name":"MegaCode Ultra","short_name":"MegaCode","start_url":".","display":"standalone","background_color":"#080c14","theme_color":"#3b82f6"}'>
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -36,13 +36,17 @@
 				<div class="col-6 col-md-3">
 					<div class="stat-box">
 						<div class="small text-secondary text-uppercase">Top Latency</div>
-						<div class="h4 mb-0 text-success">33ms</div>
+						<div class="h4 mb-0 text-success">34ms</div>
 					</div>
 				</div>
 			</div>
 
 			<div class="d-flex justify-content-center gap-3">
 				<a href="cleaned_configs.txt" download class="btn-main"><i class="fas fa-download me-2"></i> Get Configs</a>
+				<a href="subs/ai.txt" download class="btn btn-outline-light rounded-pill px-3">AI (ChatGPT, Claude, Gemini)</a>
+				<a href="subs/gaming.txt" download class="btn btn-outline-light rounded-pill px-3">Gaming (low ping)</a>
+				<a href="subs/youtube.txt" download class="btn btn-outline-light rounded-pill px-3">YouTube</a>
+				<a href="subs/instagram.txt" download class="btn btn-outline-light rounded-pill px-3">Instagram</a>
 				<button class="btn btn-outline-light rounded-pill px-4" data-bs-toggle="modal" data-bs-target="#helpModal">Help</button>
 			</div>
 		</header>
@@ -52,10 +56,11 @@
 			<div class="glass-card p-4 h-100">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<span class="node-rank">RANK #1</span>
-					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> Verified</div>
+					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> US 34ms</div>
 				</div>
-				<p class="small text-truncate text-secondary mb-4">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.193:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.193-0109#⚡33ms-RankedByMegaCode</p>
-				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" onclick="copyToClipboard('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.193:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.193-0109#⚡33ms-RankedByMegaCode')">
+				<p class="small text-info mb-2">AI · Gaming · YouTube · Instagram</p>
+				<p class="small text-truncate text-secondary mb-4">vmess://eyJhZGQiOiIxNjkuMTk3LjE0My4xMTYiLCJhaWQiOiIwIiwiYWxwbiI6IiIsImZwIjoiIiwiaG9zdCI6IiIsImlkIjoiMDQ2MjFiYWUtYWIzNi0xMWVjLWI5MDktMDI0MmFjMTIwMDAyIiwiaW5zZWN1cmUiOiIwIiwibmFtZSI6IjRLaWFuLWNmNzhkNzdhMDciLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiIiwicGNzIjoiIiwicG9ydCI6MjIzMjQsInBzIjoiVVMtMDEg4pqhMzRtcyBBSSDCtyBHYW1pbmcgwrcgWW91VHViZSDCtyBJbnN0YWdyYW0tUmFua2VkQnlNZWdhQ29kZSIsInNjeSI6ImF1dG8iLCJzbmkiOiIiLCJ0bHMiOiIiLCJ0eXBlIjoibm9uZSIsInYiOiIyIiwidmNuIjoiIn0=</p>
+				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" data-config="vmess://eyJhZGQiOiIxNjkuMTk3LjE0My4xMTYiLCJhaWQiOiIwIiwiYWxwbiI6IiIsImZwIjoiIiwiaG9zdCI6IiIsImlkIjoiMDQ2MjFiYWUtYWIzNi0xMWVjLWI5MDktMDI0MmFjMTIwMDAyIiwiaW5zZWN1cmUiOiIwIiwibmFtZSI6IjRLaWFuLWNmNzhkNzdhMDciLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiIiwicGNzIjoiIiwicG9ydCI6MjIzMjQsInBzIjoiVVMtMDEg4pqhMzRtcyBBSSDCtyBHYW1pbmcgwrcgWW91VHViZSDCtyBJbnN0YWdyYW0tUmFua2VkQnlNZWdhQ29kZSIsInNjeSI6ImF1dG8iLCJzbmkiOiIiLCJ0bHMiOiIiLCJ0eXBlIjoibm9uZSIsInYiOiIyIiwidmNuIjoiIn0=" onclick="copyToClipboard(this.dataset.config)">
 					<i class="far fa-copy me-1"></i> Copy Configuration
 				</button>
 			</div>
@@ -64,10 +69,11 @@
 			<div class="glass-card p-4 h-100">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<span class="node-rank">RANK #2</span>
-					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> Verified</div>
+					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> US 38ms</div>
 				</div>
-				<p class="small text-truncate text-secondary mb-4">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.66:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.66-0102#⚡33ms-RankedByMegaCode</p>
-				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" onclick="copyToClipboard('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.66:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.66-0102#⚡33ms-RankedByMegaCode')">
+				<p class="small text-info mb-2">AI · Gaming · YouTube · Instagram</p>
+				<p class="small text-truncate text-secondary mb-4">vmess://eyJhZGQiOiIxNjkuMTk3LjE0My4xMTYiLCJhaWQiOjAsImhvc3QiOiIiLCJpZCI6IjA0NjIxYmFlLWFiMzYtMTFlYy1iOTA5LTAyNDJhYzEyMDAwMiIsIm5ldCI6InJhdyIsInBhdGgiOiIiLCJwb3J0IjoiMjIzMjQiLCJwcyI6IlVTLTAyIOKaoTM4bXMgQUkgwrcgR2FtaW5nIMK3IFlvdVR1YmUgwrcgSW5zdGFncmFtLVJhbmtlZEJ5TWVnYUNvZGUiLCJzbmkiOiIiLCJ0bHMiOiIiLCJ0eXBlIjoibm9uZSIsInYiOiIyIn0=</p>
+				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" data-config="vmess://eyJhZGQiOiIxNjkuMTk3LjE0My4xMTYiLCJhaWQiOjAsImhvc3QiOiIiLCJpZCI6IjA0NjIxYmFlLWFiMzYtMTFlYy1iOTA5LTAyNDJhYzEyMDAwMiIsIm5ldCI6InJhdyIsInBhdGgiOiIiLCJwb3J0IjoiMjIzMjQiLCJwcyI6IlVTLTAyIOKaoTM4bXMgQUkgwrcgR2FtaW5nIMK3IFlvdVR1YmUgwrcgSW5zdGFncmFtLVJhbmtlZEJ5TWVnYUNvZGUiLCJzbmkiOiIiLCJ0bHMiOiIiLCJ0eXBlIjoibm9uZSIsInYiOiIyIn0=" onclick="copyToClipboard(this.dataset.config)">
 					<i class="far fa-copy me-1"></i> Copy Configuration
 				</button>
 			</div>
@@ -76,10 +82,11 @@
 			<div class="glass-card p-4 h-100">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<span class="node-rank">RANK #3</span>
-					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> Verified</div>
+					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> US 46ms</div>
 				</div>
-				<p class="small text-truncate text-secondary mb-4">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@193.29.139.223:8080#%F0%9F%87%B3%F0%9F%87%B1NL-193.29.139.223-0142#⚡33ms-RankedByMegaCode</p>
-				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" onclick="copyToClipboard('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@193.29.139.223:8080#%F0%9F%87%B3%F0%9F%87%B1NL-193.29.139.223-0142#⚡33ms-RankedByMegaCode')">
+				<p class="small text-info mb-2">AI · Gaming · YouTube · Instagram</p>
+				<p class="small text-truncate text-secondary mb-4">vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.197:23576?security=reality&amp;encryption=none&amp;pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&amp;headerType=none&amp;fp=chrome&amp;type=tcp&amp;flow=xtls-rprx-vision&amp;sni=fuck.rkn&amp;sid=01#US-03%20%E2%9A%A146ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode</p>
+				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" data-config="vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.197:23576?security=reality&amp;encryption=none&amp;pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&amp;headerType=none&amp;fp=chrome&amp;type=tcp&amp;flow=xtls-rprx-vision&amp;sni=fuck.rkn&amp;sid=01#US-03%20%E2%9A%A146ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode" onclick="copyToClipboard(this.dataset.config)">
 					<i class="far fa-copy me-1"></i> Copy Configuration
 				</button>
 			</div>
@@ -88,10 +95,11 @@
 			<div class="glass-card p-4 h-100">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<span class="node-rank">RANK #4</span>
-					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> Verified</div>
+					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> US 47ms</div>
 				</div>
-				<p class="small text-truncate text-secondary mb-4">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.192:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.192-0112#⚡34ms-RankedByMegaCode</p>
-				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" onclick="copyToClipboard('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.192:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.192-0112#⚡34ms-RankedByMegaCode')">
+				<p class="small text-info mb-2">AI · Gaming · YouTube · Instagram</p>
+				<p class="small text-truncate text-secondary mb-4">vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.198:23576?security=reality&amp;type=tcp&amp;packetEncoding=xudp&amp;sni=fuck.rkn&amp;fp=chrome&amp;flow=xtls-rprx-vision&amp;sid=01&amp;pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&amp;encryption=none#US-04%20%E2%9A%A147ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode</p>
+				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" data-config="vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.198:23576?security=reality&amp;type=tcp&amp;packetEncoding=xudp&amp;sni=fuck.rkn&amp;fp=chrome&amp;flow=xtls-rprx-vision&amp;sid=01&amp;pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&amp;encryption=none#US-04%20%E2%9A%A147ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode" onclick="copyToClipboard(this.dataset.config)">
 					<i class="far fa-copy me-1"></i> Copy Configuration
 				</button>
 			</div>
@@ -100,10 +108,11 @@
 			<div class="glass-card p-4 h-100">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<span class="node-rank">RANK #5</span>
-					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> Verified</div>
+					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> US 49ms</div>
 				</div>
-				<p class="small text-truncate text-secondary mb-4">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.206:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.206-0105#⚡34ms-RankedByMegaCode</p>
-				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" onclick="copyToClipboard('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.206:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.206-0105#⚡34ms-RankedByMegaCode')">
+				<p class="small text-info mb-2">AI · Gaming · YouTube · Instagram</p>
+				<p class="small text-truncate text-secondary mb-4">vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.195:23576?type=tcp&amp;encryption=none&amp;flow=xtls-rprx-vision&amp;sni=fuck.rkn&amp;fp=chrome&amp;security=reality&amp;pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&amp;sid=01#US-05%20%E2%9A%A149ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode</p>
+				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" data-config="vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.195:23576?type=tcp&amp;encryption=none&amp;flow=xtls-rprx-vision&amp;sni=fuck.rkn&amp;fp=chrome&amp;security=reality&amp;pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&amp;sid=01#US-05%20%E2%9A%A149ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode" onclick="copyToClipboard(this.dataset.config)">
 					<i class="far fa-copy me-1"></i> Copy Configuration
 				</button>
 			</div>
@@ -112,10 +121,11 @@
 			<div class="glass-card p-4 h-100">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<span class="node-rank">RANK #6</span>
-					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> Verified</div>
+					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> US 50ms</div>
 				</div>
-				<p class="small text-truncate text-secondary mb-4">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.174:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.174-0106#⚡34ms-RankedByMegaCode</p>
-				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" onclick="copyToClipboard('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.174:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.174-0106#⚡34ms-RankedByMegaCode')">
+				<p class="small text-info mb-2">AI · Gaming · YouTube · Instagram</p>
+				<p class="small text-truncate text-secondary mb-4">vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@ww13.levikogjgfdd.ir:23576?security=reality&amp;encryption=none&amp;pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&amp;host=Telegram-Leviko_v2ray&amp;headerType=none&amp;type=tcp&amp;flow=xtls-rprx-vision&amp;sni=fuck.rkn&amp;sid=01#US-06%20%E2%9A%A150ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode</p>
+				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" data-config="vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@ww13.levikogjgfdd.ir:23576?security=reality&amp;encryption=none&amp;pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&amp;host=Telegram-Leviko_v2ray&amp;headerType=none&amp;type=tcp&amp;flow=xtls-rprx-vision&amp;sni=fuck.rkn&amp;sid=01#US-06%20%E2%9A%A150ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode" onclick="copyToClipboard(this.dataset.config)">
 					<i class="far fa-copy me-1"></i> Copy Configuration
 				</button>
 			</div>
@@ -124,10 +134,11 @@
 			<div class="glass-card p-4 h-100">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<span class="node-rank">RANK #7</span>
-					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> Verified</div>
+					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> US 50ms</div>
 				</div>
-				<p class="small text-truncate text-secondary mb-4">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.155:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.155-0104#⚡34ms-RankedByMegaCode</p>
-				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" onclick="copyToClipboard('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.155:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.155-0104#⚡34ms-RankedByMegaCode')">
+				<p class="small text-info mb-2">AI · Gaming · YouTube · Instagram</p>
+				<p class="small text-truncate text-secondary mb-4">vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@ww13.levikogjgfdd.ir:23576?security=reality&amp;encryption=none&amp;pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&amp;headerType=none&amp;fp=chrome&amp;type=tcp&amp;flow=xtls-rprx-vision&amp;sni=fuck.rkn&amp;sid=01#US-07%20%E2%9A%A150ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode</p>
+				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" data-config="vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@ww13.levikogjgfdd.ir:23576?security=reality&amp;encryption=none&amp;pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&amp;headerType=none&amp;fp=chrome&amp;type=tcp&amp;flow=xtls-rprx-vision&amp;sni=fuck.rkn&amp;sid=01#US-07%20%E2%9A%A150ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode" onclick="copyToClipboard(this.dataset.config)">
 					<i class="far fa-copy me-1"></i> Copy Configuration
 				</button>
 			</div>
@@ -136,10 +147,11 @@
 			<div class="glass-card p-4 h-100">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<span class="node-rank">RANK #8</span>
-					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> Verified</div>
+					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> US 50ms</div>
 				</div>
-				<p class="small text-truncate text-secondary mb-4">ss://cmM0LW1kNToxNGZGUHJiZXpFM0hEWnpzTU9yNg==@138.199.42.68:8080#%F0%9F%87%BA%F0%9F%87%B8US-138.199.42.68-0081#⚡34ms-RankedByMegaCode</p>
-				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" onclick="copyToClipboard('ss://cmM0LW1kNToxNGZGUHJiZXpFM0hEWnpzTU9yNg==@138.199.42.68:8080#%F0%9F%87%BA%F0%9F%87%B8US-138.199.42.68-0081#⚡34ms-RankedByMegaCode')">
+				<p class="small text-info mb-2">AI · Gaming · YouTube · Instagram</p>
+				<p class="small text-truncate text-secondary mb-4">vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.197:23576?security=reality&amp;encryption=none&amp;pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&amp;headerType=none&amp;fp=chrome&amp;type=tcp&amp;flow=xtls-rprx-vision&amp;sni=fuck.rkn#US-08%20%E2%9A%A150ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode</p>
+				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" data-config="vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.197:23576?security=reality&amp;encryption=none&amp;pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&amp;headerType=none&amp;fp=chrome&amp;type=tcp&amp;flow=xtls-rprx-vision&amp;sni=fuck.rkn#US-08%20%E2%9A%A150ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode" onclick="copyToClipboard(this.dataset.config)">
 					<i class="far fa-copy me-1"></i> Copy Configuration
 				</button>
 			</div>
@@ -148,10 +160,11 @@
 			<div class="glass-card p-4 h-100">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<span class="node-rank">RANK #9</span>
-					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> Verified</div>
+					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> US 52ms</div>
 				</div>
-				<p class="small text-truncate text-secondary mb-4">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.180:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.180-0117#⚡35ms-RankedByMegaCode</p>
-				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" onclick="copyToClipboard('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.180:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.180-0117#⚡35ms-RankedByMegaCode')">
+				<p class="small text-info mb-2">AI · Gaming · YouTube · Instagram</p>
+				<p class="small text-truncate text-secondary mb-4">vmess://eyJhZGQiOiI4NC4xNy40MS4yIiwiYWlkIjowLCJob3N0IjoiIiwiaWQiOiJmOGM4ZGMzZC0wZDM3LTQ2YjAtOGIzNC1hNzIzMjg4MmZjZmUiLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiIiwicG9ydCI6IjE4MDAwIiwicHMiOiJVUy0wOSDimqE1Mm1zIEFJIMK3IEdhbWluZyDCtyBZb3VUdWJlIMK3IEluc3RhZ3JhbS1SYW5rZWRCeU1lZ2FDb2RlIiwic25pIjoiIiwidGxzIjoiIiwidHlwZSI6Im5vbmUiLCJ2IjoiMiJ9</p>
+				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" data-config="vmess://eyJhZGQiOiI4NC4xNy40MS4yIiwiYWlkIjowLCJob3N0IjoiIiwiaWQiOiJmOGM4ZGMzZC0wZDM3LTQ2YjAtOGIzNC1hNzIzMjg4MmZjZmUiLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiIiwicG9ydCI6IjE4MDAwIiwicHMiOiJVUy0wOSDimqE1Mm1zIEFJIMK3IEdhbWluZyDCtyBZb3VUdWJlIMK3IEluc3RhZ3JhbS1SYW5rZWRCeU1lZ2FDb2RlIiwic25pIjoiIiwidGxzIjoiIiwidHlwZSI6Im5vbmUiLCJ2IjoiMiJ9" onclick="copyToClipboard(this.dataset.config)">
 					<i class="far fa-copy me-1"></i> Copy Configuration
 				</button>
 			</div>
@@ -160,10 +173,11 @@
 			<div class="glass-card p-4 h-100">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<span class="node-rank">RANK #10</span>
-					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> Verified</div>
+					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> US 52ms</div>
 				</div>
-				<p class="small text-truncate text-secondary mb-4">ss://cmM0LW1kNToxNGZGUHJiZXpFM0hEWnpzTU9yNg==@146.70.61.37:8080#%F0%9F%87%AC%F0%9F%87%A7GB-146.70.61.37-0130#⚡35ms-RankedByMegaCode</p>
-				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" onclick="copyToClipboard('ss://cmM0LW1kNToxNGZGUHJiZXpFM0hEWnpzTU9yNg==@146.70.61.37:8080#%F0%9F%87%AC%F0%9F%87%A7GB-146.70.61.37-0130#⚡35ms-RankedByMegaCode')">
+				<p class="small text-info mb-2">AI · Gaming · YouTube · Instagram</p>
+				<p class="small text-truncate text-secondary mb-4">vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.206:23576?security=reality&amp;encryption=none&amp;pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&amp;headerType=none&amp;fp=chrome&amp;type=tcp&amp;flow=xtls-rprx-vision&amp;sni=fuck.rkn&amp;sid=01#US-10%20%E2%9A%A152ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode</p>
+				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" data-config="vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.206:23576?security=reality&amp;encryption=none&amp;pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&amp;headerType=none&amp;fp=chrome&amp;type=tcp&amp;flow=xtls-rprx-vision&amp;sni=fuck.rkn&amp;sid=01#US-10%20%E2%9A%A152ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode" onclick="copyToClipboard(this.dataset.config)">
 					<i class="far fa-copy me-1"></i> Copy Configuration
 				</button>
 			</div>
@@ -172,10 +186,11 @@
 			<div class="glass-card p-4 h-100">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<span class="node-rank">RANK #11</span>
-					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> Verified</div>
+					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> US 52ms</div>
 				</div>
-				<p class="small text-truncate text-secondary mb-4">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.184:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.184-0095#⚡35ms-RankedByMegaCode</p>
-				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" onclick="copyToClipboard('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.184:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.184-0095#⚡35ms-RankedByMegaCode')">
+				<p class="small text-info mb-2">AI · Gaming · YouTube · Instagram</p>
+				<p class="small text-truncate text-secondary mb-4">vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.216:23576?security=reality&amp;encryption=none&amp;pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&amp;headerType=none&amp;fp=chrome&amp;type=tcp&amp;flow=xtls-rprx-vision&amp;sni=fuck.rkn&amp;sid=01#US-11%20%E2%9A%A152ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode</p>
+				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" data-config="vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.216:23576?security=reality&amp;encryption=none&amp;pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&amp;headerType=none&amp;fp=chrome&amp;type=tcp&amp;flow=xtls-rprx-vision&amp;sni=fuck.rkn&amp;sid=01#US-11%20%E2%9A%A152ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode" onclick="copyToClipboard(this.dataset.config)">
 					<i class="far fa-copy me-1"></i> Copy Configuration
 				</button>
 			</div>
@@ -184,10 +199,11 @@
 			<div class="glass-card p-4 h-100">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<span class="node-rank">RANK #12</span>
-					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> Verified</div>
+					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> CA 55ms</div>
 				</div>
-				<p class="small text-truncate text-secondary mb-4">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpHNXA2d3c0bzY3SEI=@108.181.0.177:8388#%F0%9F%87%BA%F0%9F%87%B8US-108.181.0.177-0079#⚡35ms-RankedByMegaCode</p>
-				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" onclick="copyToClipboard('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpHNXA2d3c0bzY3SEI=@108.181.0.177:8388#%F0%9F%87%BA%F0%9F%87%B8US-108.181.0.177-0079#⚡35ms-RankedByMegaCode')">
+				<p class="small text-info mb-2">AI · Gaming · YouTube · Instagram</p>
+				<p class="small text-truncate text-secondary mb-4">vmess://eyJhZGQiOiIxNTguNTEuMTIzLjQyIiwiYWlkIjoiMCIsImFscG4iOiIiLCJmcCI6IiIsImhvc3QiOiIiLCJpZCI6IjA0NjIxYmFlLWFiMzYtMTFlYy1iOTA5LTAyNDJhYzEyMDAwMiIsImluc2VjdXJlIjoiMCIsIm5ldCI6InRjcCIsInBhdGgiOiIiLCJwY3MiOiIiLCJwb3J0IjoiMjIzMjQiLCJwcyI6IkNBLTEyIOKaoTU1bXMgQUkgwrcgR2FtaW5nIMK3IFlvdVR1YmUgwrcgSW5zdGFncmFtLVJhbmtlZEJ5TWVnYUNvZGUiLCJzY3kiOiJhdXRvIiwic25pIjoiIiwidGxzIjoiIiwidHlwZSI6Im5vbmUiLCJ2IjoiMiIsInZjbiI6IiJ9</p>
+				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" data-config="vmess://eyJhZGQiOiIxNTguNTEuMTIzLjQyIiwiYWlkIjoiMCIsImFscG4iOiIiLCJmcCI6IiIsImhvc3QiOiIiLCJpZCI6IjA0NjIxYmFlLWFiMzYtMTFlYy1iOTA5LTAyNDJhYzEyMDAwMiIsImluc2VjdXJlIjoiMCIsIm5ldCI6InRjcCIsInBhdGgiOiIiLCJwY3MiOiIiLCJwb3J0IjoiMjIzMjQiLCJwcyI6IkNBLTEyIOKaoTU1bXMgQUkgwrcgR2FtaW5nIMK3IFlvdVR1YmUgwrcgSW5zdGFncmFtLVJhbmtlZEJ5TWVnYUNvZGUiLCJzY3kiOiJhdXRvIiwic25pIjoiIiwidGxzIjoiIiwidHlwZSI6Im5vbmUiLCJ2IjoiMiIsInZjbiI6IiJ9" onclick="copyToClipboard(this.dataset.config)">
 					<i class="far fa-copy me-1"></i> Copy Configuration
 				</button>
 			</div>
@@ -196,10 +212,11 @@
 			<div class="glass-card p-4 h-100">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<span class="node-rank">RANK #13</span>
-					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> Verified</div>
+					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> US 55ms</div>
 				</div>
-				<p class="small text-truncate text-secondary mb-4">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.176:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.176-0093#⚡35ms-RankedByMegaCode</p>
-				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" onclick="copyToClipboard('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.176:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.176-0093#⚡35ms-RankedByMegaCode')">
+				<p class="small text-info mb-2">AI · Gaming · YouTube · Instagram</p>
+				<p class="small text-truncate text-secondary mb-4">vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.216:23576?security=reality&amp;type=tcp&amp;packetEncoding=xudp&amp;sni=fuck.rkn&amp;fp=chrome&amp;flow=xtls-rprx-vision&amp;sid=01&amp;pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s#US-13%20%E2%9A%A155ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode</p>
+				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" data-config="vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.216:23576?security=reality&amp;type=tcp&amp;packetEncoding=xudp&amp;sni=fuck.rkn&amp;fp=chrome&amp;flow=xtls-rprx-vision&amp;sid=01&amp;pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s#US-13%20%E2%9A%A155ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode" onclick="copyToClipboard(this.dataset.config)">
 					<i class="far fa-copy me-1"></i> Copy Configuration
 				</button>
 			</div>
@@ -208,10 +225,11 @@
 			<div class="glass-card p-4 h-100">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<span class="node-rank">RANK #14</span>
-					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> Verified</div>
+					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> US 57ms</div>
 				</div>
-				<p class="small text-truncate text-secondary mb-4">ss://YWVzLTEyOC1nY206c2hhZG93c29ja3M=@37.19.198.243:443#%F0%9F%87%BA%F0%9F%87%B8US-37.19.198.243-0091#⚡36ms-RankedByMegaCode</p>
-				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" onclick="copyToClipboard('ss://YWVzLTEyOC1nY206c2hhZG93c29ja3M=@37.19.198.243:443#%F0%9F%87%BA%F0%9F%87%B8US-37.19.198.243-0091#⚡36ms-RankedByMegaCode')">
+				<p class="small text-info mb-2">AI · Gaming · YouTube · Instagram</p>
+				<p class="small text-truncate text-secondary mb-4">vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.219:23576?security=reality&amp;encryption=none&amp;pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&amp;headerType=none&amp;fp=chrome&amp;type=tcp&amp;flow=xtls-rprx-vision&amp;sni=fuck.rkn&amp;sid=01#US-14%20%E2%9A%A157ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode</p>
+				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" data-config="vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.219:23576?security=reality&amp;encryption=none&amp;pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&amp;headerType=none&amp;fp=chrome&amp;type=tcp&amp;flow=xtls-rprx-vision&amp;sni=fuck.rkn&amp;sid=01#US-14%20%E2%9A%A157ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode" onclick="copyToClipboard(this.dataset.config)">
 					<i class="far fa-copy me-1"></i> Copy Configuration
 				</button>
 			</div>
@@ -220,10 +238,11 @@
 			<div class="glass-card p-4 h-100">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<span class="node-rank">RANK #15</span>
-					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> Verified</div>
+					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> US 60ms</div>
 				</div>
-				<p class="small text-truncate text-secondary mb-4">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.48:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.48-0114#⚡36ms-RankedByMegaCode</p>
-				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" onclick="copyToClipboard('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.48:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.48-0114#⚡36ms-RankedByMegaCode')">
+				<p class="small text-info mb-2">AI · Gaming · YouTube · Instagram</p>
+				<p class="small text-truncate text-secondary mb-4">vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.216:23576?flow=xtls-rprx-vision&amp;security=reality&amp;sni=fuck.rkn&amp;fp=chrome&amp;pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&amp;sid=01&amp;type=tcp&amp;path=/#US-15%20%E2%9A%A160ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode</p>
+				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" data-config="vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.216:23576?flow=xtls-rprx-vision&amp;security=reality&amp;sni=fuck.rkn&amp;fp=chrome&amp;pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&amp;sid=01&amp;type=tcp&amp;path=/#US-15%20%E2%9A%A160ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode" onclick="copyToClipboard(this.dataset.config)">
 					<i class="far fa-copy me-1"></i> Copy Configuration
 				</button>
 			</div>
@@ -232,10 +251,11 @@
 			<div class="glass-card p-4 h-100">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<span class="node-rank">RANK #16</span>
-					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> Verified</div>
+					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> CA 60ms</div>
 				</div>
-				<p class="small text-truncate text-secondary mb-4">ss://YWVzLTEyOC1nY206c2hhZG93c29ja3M=@156.146.38.170:443#%F0%9F%87%BA%F0%9F%87%B8US-156.146.38.170-0076#⚡36ms-RankedByMegaCode</p>
-				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" onclick="copyToClipboard('ss://YWVzLTEyOC1nY206c2hhZG93c29ja3M=@156.146.38.170:443#%F0%9F%87%BA%F0%9F%87%B8US-156.146.38.170-0076#⚡36ms-RankedByMegaCode')">
+				<p class="small text-info mb-2">AI · Gaming · YouTube · Instagram</p>
+				<p class="small text-truncate text-secondary mb-4">vmess://eyJhZGQiOiIxNTguNTEuMTIzLjQyIiwiYWlkIjowLCJob3N0IjoiIiwiaWQiOiIwNDYyMWJhZS1hYjM2LTExZWMtYjkwOS0wMjQyYWMxMjAwMDIiLCJuZXQiOiJyYXciLCJwYXRoIjoiLyIsInBvcnQiOiIyMjMyNCIsInBzIjoiQ0EtMTYg4pqhNjBtcyBBSSDCtyBHYW1pbmcgwrcgWW91VHViZSDCtyBJbnN0YWdyYW0tUmFua2VkQnlNZWdhQ29kZSIsInNuaSI6IiIsInRscyI6IiIsInR5cGUiOiJub25lIiwidiI6IjIifQ==</p>
+				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" data-config="vmess://eyJhZGQiOiIxNTguNTEuMTIzLjQyIiwiYWlkIjowLCJob3N0IjoiIiwiaWQiOiIwNDYyMWJhZS1hYjM2LTExZWMtYjkwOS0wMjQyYWMxMjAwMDIiLCJuZXQiOiJyYXciLCJwYXRoIjoiLyIsInBvcnQiOiIyMjMyNCIsInBzIjoiQ0EtMTYg4pqhNjBtcyBBSSDCtyBHYW1pbmcgwrcgWW91VHViZSDCtyBJbnN0YWdyYW0tUmFua2VkQnlNZWdhQ29kZSIsInNuaSI6IiIsInRscyI6IiIsInR5cGUiOiJub25lIiwidiI6IjIifQ==" onclick="copyToClipboard(this.dataset.config)">
 					<i class="far fa-copy me-1"></i> Copy Configuration
 				</button>
 			</div>
@@ -244,10 +264,11 @@
 			<div class="glass-card p-4 h-100">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<span class="node-rank">RANK #17</span>
-					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> Verified</div>
+					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> US 61ms</div>
 				</div>
-				<p class="small text-truncate text-secondary mb-4">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.181:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.181-0127#⚡36ms-RankedByMegaCode</p>
-				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" onclick="copyToClipboard('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.181:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.181-0127#⚡36ms-RankedByMegaCode')">
+				<p class="small text-info mb-2">AI · Gaming · YouTube · Instagram</p>
+				<p class="small text-truncate text-secondary mb-4">vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.214:23576/?type=tcp&amp;encryption=none&amp;flow=xtls-rprx-vision&amp;sni=fuck.rkn&amp;fp=chrome&amp;security=reality&amp;pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&amp;sid=01#US-17%20%E2%9A%A161ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode</p>
+				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" data-config="vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.214:23576/?type=tcp&amp;encryption=none&amp;flow=xtls-rprx-vision&amp;sni=fuck.rkn&amp;fp=chrome&amp;security=reality&amp;pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&amp;sid=01#US-17%20%E2%9A%A161ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode" onclick="copyToClipboard(this.dataset.config)">
 					<i class="far fa-copy me-1"></i> Copy Configuration
 				</button>
 			</div>
@@ -256,10 +277,11 @@
 			<div class="glass-card p-4 h-100">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<span class="node-rank">RANK #18</span>
-					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> Verified</div>
+					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> US 75ms</div>
 				</div>
-				<p class="small text-truncate text-secondary mb-4">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.42:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.42-0096#⚡37ms-RankedByMegaCode</p>
-				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" onclick="copyToClipboard('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.42:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.42-0096#⚡37ms-RankedByMegaCode')">
+				<p class="small text-info mb-2">AI · Gaming · YouTube · Instagram</p>
+				<p class="small text-truncate text-secondary mb-4">vmess://eyJhZGQiOiI4NC4xNy40MS4yIiwiYWlkIjoiMCIsImFscG4iOm51bGwsImZwIjpudWxsLCJob3N0IjoiIiwiaWQiOiJmOGM4ZGMzZC0wZDM3LTQ2YjAtOGIzNC1hNzIzMjg4MmZjZmUiLCJuYW1lIjoiVVMgXHVkODNjXHVkZGZhXHVkODNjXHVkZGY4IHwgQFJheWRpa2FseCB8IDEwMTI2OSIsIm5ldCI6InRjcCIsInBhdGgiOiJcLyIsInBvcnQiOjE4MDAwLCJwcyI6IlVTLTE4IOKaoTc1bXMgQUkgwrcgR2FtaW5nIMK3IFlvdVR1YmUgwrcgSW5zdGFncmFtLVJhbmtlZEJ5TWVnYUNvZGUiLCJzY3kiOiJhdXRvIiwic25pIjpudWxsLCJ0bHMiOiJub25lIiwidHlwZSI6bnVsbCwidiI6bnVsbH0=</p>
+				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" data-config="vmess://eyJhZGQiOiI4NC4xNy40MS4yIiwiYWlkIjoiMCIsImFscG4iOm51bGwsImZwIjpudWxsLCJob3N0IjoiIiwiaWQiOiJmOGM4ZGMzZC0wZDM3LTQ2YjAtOGIzNC1hNzIzMjg4MmZjZmUiLCJuYW1lIjoiVVMgXHVkODNjXHVkZGZhXHVkODNjXHVkZGY4IHwgQFJheWRpa2FseCB8IDEwMTI2OSIsIm5ldCI6InRjcCIsInBhdGgiOiJcLyIsInBvcnQiOjE4MDAwLCJwcyI6IlVTLTE4IOKaoTc1bXMgQUkgwrcgR2FtaW5nIMK3IFlvdVR1YmUgwrcgSW5zdGFncmFtLVJhbmtlZEJ5TWVnYUNvZGUiLCJzY3kiOiJhdXRvIiwic25pIjpudWxsLCJ0bHMiOiJub25lIiwidHlwZSI6bnVsbCwidiI6bnVsbH0=" onclick="copyToClipboard(this.dataset.config)">
 					<i class="far fa-copy me-1"></i> Copy Configuration
 				</button>
 			</div>
@@ -268,10 +290,11 @@
 			<div class="glass-card p-4 h-100">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<span class="node-rank">RANK #19</span>
-					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> Verified</div>
+					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> US 86ms</div>
 				</div>
-				<p class="small text-truncate text-secondary mb-4">ss://YWVzLTEyOC1nY206c2hhZG93c29ja3M=@37.19.198.160:443#%F0%9F%87%BA%F0%9F%87%B8US-37.19.198.160-0087#⚡37ms-RankedByMegaCode</p>
-				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" onclick="copyToClipboard('ss://YWVzLTEyOC1nY206c2hhZG93c29ja3M=@37.19.198.160:443#%F0%9F%87%BA%F0%9F%87%B8US-37.19.198.160-0087#⚡37ms-RankedByMegaCode')">
+				<p class="small text-info mb-2">AI · Gaming · YouTube · Instagram</p>
+				<p class="small text-truncate text-secondary mb-4">vmess://eyJhZGQiOiIyMTYuMTUyLjE1Mi4xODciLCJhaWQiOiIwIiwiYWxwbiI6IiIsImZwIjoiIiwiaG9zdCI6IiIsImlkIjoiMDQ2MjFiYWUtYWIzNi0xMWVjLWI5MDktMDI0MmFjMTIwMDAyIiwiaW5zZWN1cmUiOiIwIiwibmFtZSI6IjRTYXJpbmEtOGE4Yzc1OGE2NiIsIm5ldCI6InRjcCIsInBhdGgiOiIiLCJwY3MiOiIiLCJwb3J0IjoyMjMyNCwicHMiOiJVUy0xOSDimqE4Nm1zIEFJIMK3IEdhbWluZyDCtyBZb3VUdWJlIMK3IEluc3RhZ3JhbS1SYW5rZWRCeU1lZ2FDb2RlIiwic2N5IjoiYXV0byIsInNuaSI6IiIsInRscyI6Im5vbmUiLCJ0eXBlIjoibm9uZSIsInYiOiIyIiwidmNuIjoiIn0=</p>
+				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" data-config="vmess://eyJhZGQiOiIyMTYuMTUyLjE1Mi4xODciLCJhaWQiOiIwIiwiYWxwbiI6IiIsImZwIjoiIiwiaG9zdCI6IiIsImlkIjoiMDQ2MjFiYWUtYWIzNi0xMWVjLWI5MDktMDI0MmFjMTIwMDAyIiwiaW5zZWN1cmUiOiIwIiwibmFtZSI6IjRTYXJpbmEtOGE4Yzc1OGE2NiIsIm5ldCI6InRjcCIsInBhdGgiOiIiLCJwY3MiOiIiLCJwb3J0IjoyMjMyNCwicHMiOiJVUy0xOSDimqE4Nm1zIEFJIMK3IEdhbWluZyDCtyBZb3VUdWJlIMK3IEluc3RhZ3JhbS1SYW5rZWRCeU1lZ2FDb2RlIiwic2N5IjoiYXV0byIsInNuaSI6IiIsInRscyI6Im5vbmUiLCJ0eXBlIjoibm9uZSIsInYiOiIyIiwidmNuIjoiIn0=" onclick="copyToClipboard(this.dataset.config)">
 					<i class="far fa-copy me-1"></i> Copy Configuration
 				</button>
 			</div>
@@ -280,10 +303,11 @@
 			<div class="glass-card p-4 h-100">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<span class="node-rank">RANK #20</span>
-					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> Verified</div>
+					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> US 87ms</div>
 				</div>
-				<p class="small text-truncate text-secondary mb-4">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.62:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.62-0120#⚡37ms-RankedByMegaCode</p>
-				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" onclick="copyToClipboard('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.62:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.62-0120#⚡37ms-RankedByMegaCode')">
+				<p class="small text-info mb-2">AI · Gaming · YouTube · Instagram</p>
+				<p class="small text-truncate text-secondary mb-4">vmess://eyJhZGQiOiIxNjcuMTcuNjguODkiLCJhaWQiOiIwIiwiYWxwbiI6IiIsImZwIjoiIiwiaG9zdCI6IiIsImlkIjoiMDQ2MjFiYWUtYWIzNi0xMWVjLWI5MDktMDI0MmFjMTIwMDAyIiwiaW5zZWN1cmUiOiIwIiwibmV0IjoidGNwIiwicGF0aCI6IiIsInBjcyI6IiIsInBvcnQiOiIyMjMyNCIsInBzIjoiVVMtMjAg4pqhODdtcyBBSSDCtyBHYW1pbmcgwrcgWW91VHViZSDCtyBJbnN0YWdyYW0tUmFua2VkQnlNZWdhQ29kZSIsInNjeSI6ImF1dG8iLCJzbmkiOiIiLCJ0bHMiOiIiLCJ0eXBlIjoibm9uZSIsInYiOiIyIiwidmNuIjoiIn0=</p>
+				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" data-config="vmess://eyJhZGQiOiIxNjcuMTcuNjguODkiLCJhaWQiOiIwIiwiYWxwbiI6IiIsImZwIjoiIiwiaG9zdCI6IiIsImlkIjoiMDQ2MjFiYWUtYWIzNi0xMWVjLWI5MDktMDI0MmFjMTIwMDAyIiwiaW5zZWN1cmUiOiIwIiwibmV0IjoidGNwIiwicGF0aCI6IiIsInBjcyI6IiIsInBvcnQiOiIyMjMyNCIsInBzIjoiVVMtMjAg4pqhODdtcyBBSSDCtyBHYW1pbmcgwrcgWW91VHViZSDCtyBJbnN0YWdyYW0tUmFua2VkQnlNZWdhQ29kZSIsInNjeSI6ImF1dG8iLCJzbmkiOiIiLCJ0bHMiOiIiLCJ0eXBlIjoibm9uZSIsInYiOiIyIiwidmNuIjoiIn0=" onclick="copyToClipboard(this.dataset.config)">
 					<i class="far fa-copy me-1"></i> Copy Configuration
 				</button>
 			</div>
@@ -292,10 +316,11 @@
 			<div class="glass-card p-4 h-100">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<span class="node-rank">RANK #21</span>
-					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> Verified</div>
+					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> US 87ms</div>
 				</div>
-				<p class="small text-truncate text-secondary mb-4">ss://YWVzLTEyOC1nY206c2hhZG93c29ja3M=@156.146.38.168:443#%F0%9F%87%BA%F0%9F%87%B8US-156.146.38.168-0073#⚡37ms-RankedByMegaCode</p>
-				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" onclick="copyToClipboard('ss://YWVzLTEyOC1nY206c2hhZG93c29ja3M=@156.146.38.168:443#%F0%9F%87%BA%F0%9F%87%B8US-156.146.38.168-0073#⚡37ms-RankedByMegaCode')">
+				<p class="small text-info mb-2">AI · Gaming · YouTube · Instagram</p>
+				<p class="small text-truncate text-secondary mb-4">vless://cb2dbb6a-a1ea-4023-9ace-6466cee57241@51.81.203.63:443?flow=xtls-rprx-vision&amp;fp=chrome&amp;pbk=nqwCf6oW49tEtmQ0EzxigZ0uu1pg0E30CS54G40Iti0&amp;security=reality&amp;sid=4477382ff6d3d41c&amp;sni=www.icloud.com&amp;type=raw#US-21%20%E2%9A%A187ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode</p>
+				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" data-config="vless://cb2dbb6a-a1ea-4023-9ace-6466cee57241@51.81.203.63:443?flow=xtls-rprx-vision&amp;fp=chrome&amp;pbk=nqwCf6oW49tEtmQ0EzxigZ0uu1pg0E30CS54G40Iti0&amp;security=reality&amp;sid=4477382ff6d3d41c&amp;sni=www.icloud.com&amp;type=raw#US-21%20%E2%9A%A187ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode" onclick="copyToClipboard(this.dataset.config)">
 					<i class="far fa-copy me-1"></i> Copy Configuration
 				</button>
 			</div>
@@ -304,10 +329,11 @@
 			<div class="glass-card p-4 h-100">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<span class="node-rank">RANK #22</span>
-					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> Verified</div>
+					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> US 89ms</div>
 				</div>
-				<p class="small text-truncate text-secondary mb-4">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.35:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.35-0113#⚡37ms-RankedByMegaCode</p>
-				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" onclick="copyToClipboard('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.35:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.35-0113#⚡37ms-RankedByMegaCode')">
+				<p class="small text-info mb-2">AI · Gaming · YouTube · Instagram</p>
+				<p class="small text-truncate text-secondary mb-4">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTp0MHNybWR4cm0zeHlqbnZxejlld2x4YjJteXE3cmp1dg@88.210.36.107:2377?plugin=obfs-local%3Bobfs%3Dtls%3Bobfs-host%3Dfeb7fa9%3A154948#US-22%20%E2%9A%A189ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode</p>
+				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" data-config="ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTp0MHNybWR4cm0zeHlqbnZxejlld2x4YjJteXE3cmp1dg@88.210.36.107:2377?plugin=obfs-local%3Bobfs%3Dtls%3Bobfs-host%3Dfeb7fa9%3A154948#US-22%20%E2%9A%A189ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode" onclick="copyToClipboard(this.dataset.config)">
 					<i class="far fa-copy me-1"></i> Copy Configuration
 				</button>
 			</div>
@@ -316,10 +342,11 @@
 			<div class="glass-card p-4 h-100">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<span class="node-rank">RANK #23</span>
-					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> Verified</div>
+					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> US 89ms</div>
 				</div>
-				<p class="small text-truncate text-secondary mb-4">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.34:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.34-0092#⚡37ms-RankedByMegaCode</p>
-				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" onclick="copyToClipboard('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.34:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.34-0092#⚡37ms-RankedByMegaCode')">
+				<p class="small text-info mb-2">AI · Gaming · YouTube · Instagram</p>
+				<p class="small text-truncate text-secondary mb-4">ss://cmM0LW1kNToxNGZGUHJiZXpFM0hEWnpzTU9yNg@107.155.57.11:8080#US-23%20%E2%9A%A189ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode</p>
+				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" data-config="ss://cmM0LW1kNToxNGZGUHJiZXpFM0hEWnpzTU9yNg@107.155.57.11:8080#US-23%20%E2%9A%A189ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode" onclick="copyToClipboard(this.dataset.config)">
 					<i class="far fa-copy me-1"></i> Copy Configuration
 				</button>
 			</div>
@@ -328,10 +355,11 @@
 			<div class="glass-card p-4 h-100">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<span class="node-rank">RANK #24</span>
-					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> Verified</div>
+					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> US 90ms</div>
 				</div>
-				<p class="small text-truncate text-secondary mb-4">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@193.29.139.147:8080#%F0%9F%87%B3%F0%9F%87%B1NL-193.29.139.147-0108#⚡38ms-RankedByMegaCode</p>
-				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" onclick="copyToClipboard('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@193.29.139.147:8080#%F0%9F%87%B3%F0%9F%87%B1NL-193.29.139.147-0108#⚡38ms-RankedByMegaCode')">
+				<p class="small text-info mb-2">AI · Gaming · YouTube · Instagram</p>
+				<p class="small text-truncate text-secondary mb-4">vmess://eyJhZGQiOiIyMTYuMTUyLjE1Mi4xODciLCJhaWQiOiIwIiwiYWxwbiI6IiIsImZwIjoiIiwiaG9zdCI6IiIsImlkIjoiMDQ2MjFiYWUtYWIzNi0xMWVjLWI5MDktMDI0MmFjMTIwMDAyIiwiaW5zZWN1cmUiOiIwIiwibmV0IjoidGNwIiwicGF0aCI6IiIsInBjcyI6IiIsInBvcnQiOiIyMjMyNCIsInBzIjoiVVMtMjQg4pqhOTBtcyBBSSDCtyBHYW1pbmcgwrcgWW91VHViZSDCtyBJbnN0YWdyYW0tUmFua2VkQnlNZWdhQ29kZSIsInNjeSI6ImF1dG8iLCJzbmkiOiIiLCJ0bHMiOiIiLCJ0eXBlIjoibm9uZSIsInYiOiIyIiwidmNuIjoiIn0=</p>
+				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" data-config="vmess://eyJhZGQiOiIyMTYuMTUyLjE1Mi4xODciLCJhaWQiOiIwIiwiYWxwbiI6IiIsImZwIjoiIiwiaG9zdCI6IiIsImlkIjoiMDQ2MjFiYWUtYWIzNi0xMWVjLWI5MDktMDI0MmFjMTIwMDAyIiwiaW5zZWN1cmUiOiIwIiwibmV0IjoidGNwIiwicGF0aCI6IiIsInBjcyI6IiIsInBvcnQiOiIyMjMyNCIsInBzIjoiVVMtMjQg4pqhOTBtcyBBSSDCtyBHYW1pbmcgwrcgWW91VHViZSDCtyBJbnN0YWdyYW0tUmFua2VkQnlNZWdhQ29kZSIsInNjeSI6ImF1dG8iLCJzbmkiOiIiLCJ0bHMiOiIiLCJ0eXBlIjoibm9uZSIsInYiOiIyIiwidmNuIjoiIn0=" onclick="copyToClipboard(this.dataset.config)">
 					<i class="far fa-copy me-1"></i> Copy Configuration
 				</button>
 			</div>
@@ -340,10 +368,11 @@
 			<div class="glass-card p-4 h-100">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<span class="node-rank">RANK #25</span>
-					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> Verified</div>
+					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> US 97ms</div>
 				</div>
-				<p class="small text-truncate text-secondary mb-4">ss://YWVzLTEyOC1nY206c2hhZG93c29ja3M=@37.19.198.236:443#%F0%9F%87%BA%F0%9F%87%B8US-37.19.198.236-0089#⚡38ms-RankedByMegaCode</p>
-				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" onclick="copyToClipboard('ss://YWVzLTEyOC1nY206c2hhZG93c29ja3M=@37.19.198.236:443#%F0%9F%87%BA%F0%9F%87%B8US-37.19.198.236-0089#⚡38ms-RankedByMegaCode')">
+				<p class="small text-info mb-2">AI · Gaming · YouTube · Instagram</p>
+				<p class="small text-truncate text-secondary mb-4">hy2://bce6c821-200d-421f-bf3d-7159e5246ea0@155.248.209.237:33333?sni=hy2.123266.xyz#US-25%20%E2%9A%A197ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode</p>
+				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" data-config="hy2://bce6c821-200d-421f-bf3d-7159e5246ea0@155.248.209.237:33333?sni=hy2.123266.xyz#US-25%20%E2%9A%A197ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode" onclick="copyToClipboard(this.dataset.config)">
 					<i class="far fa-copy me-1"></i> Copy Configuration
 				</button>
 			</div>
@@ -352,10 +381,11 @@
 			<div class="glass-card p-4 h-100">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<span class="node-rank">RANK #26</span>
-					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> Verified</div>
+					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> US 100ms</div>
 				</div>
-				<p class="small text-truncate text-secondary mb-4">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.61:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.61-0122#⚡38ms-RankedByMegaCode</p>
-				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" onclick="copyToClipboard('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.61:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.61-0122#⚡38ms-RankedByMegaCode')">
+				<p class="small text-info mb-2">AI · Gaming · YouTube · Instagram</p>
+				<p class="small text-truncate text-secondary mb-4">vless://47fcef29-ab4e-4aa6-932b-d95a18f28a4e@104.18.46.234:2095?host=8nj2r.2k8t.f88.hh.vavava.kdns.fr&amp;path=%2F%3Fed%3D2560security%3Dtls&amp;security=none&amp;type=ws#US-26%20%E2%9A%A1100ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode</p>
+				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" data-config="vless://47fcef29-ab4e-4aa6-932b-d95a18f28a4e@104.18.46.234:2095?host=8nj2r.2k8t.f88.hh.vavava.kdns.fr&amp;path=%2F%3Fed%3D2560security%3Dtls&amp;security=none&amp;type=ws#US-26%20%E2%9A%A1100ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode" onclick="copyToClipboard(this.dataset.config)">
 					<i class="far fa-copy me-1"></i> Copy Configuration
 				</button>
 			</div>
@@ -364,10 +394,11 @@
 			<div class="glass-card p-4 h-100">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<span class="node-rank">RANK #27</span>
-					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> Verified</div>
+					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> US 101ms</div>
 				</div>
-				<p class="small text-truncate text-secondary mb-4">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.10:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.10-0115#⚡38ms-RankedByMegaCode</p>
-				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" onclick="copyToClipboard('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.10:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.10-0115#⚡38ms-RankedByMegaCode')">
+				<p class="small text-info mb-2">AI · Gaming · YouTube · Instagram</p>
+				<p class="small text-truncate text-secondary mb-4">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpHNXA2d3c0bzY3SEI@108.181.0.177:8388#US-27%20%E2%9A%A1101ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode</p>
+				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" data-config="ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpHNXA2d3c0bzY3SEI@108.181.0.177:8388#US-27%20%E2%9A%A1101ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode" onclick="copyToClipboard(this.dataset.config)">
 					<i class="far fa-copy me-1"></i> Copy Configuration
 				</button>
 			</div>
@@ -376,10 +407,11 @@
 			<div class="glass-card p-4 h-100">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<span class="node-rank">RANK #28</span>
-					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> Verified</div>
+					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> US 103ms</div>
 				</div>
-				<p class="small text-truncate text-secondary mb-4">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTplRGZON1NPRFFjZUlPbUlBYnRKSnRL@198.98.53.130:443#%F0%9F%87%BA%F0%9F%87%B8US-198.98.53.130-0074#⚡38ms-RankedByMegaCode</p>
-				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" onclick="copyToClipboard('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTplRGZON1NPRFFjZUlPbUlBYnRKSnRL@198.98.53.130:443#%F0%9F%87%BA%F0%9F%87%B8US-198.98.53.130-0074#⚡38ms-RankedByMegaCode')">
+				<p class="small text-info mb-2">AI · Gaming · YouTube · Instagram</p>
+				<p class="small text-truncate text-secondary mb-4">ss://YWVzLTEyOC1nY206MTM3N2Q1Y2ZhZmM5Mjc5YTkwNGRlYjNiZmE0ZjNkZTI@74.201.177.54:14680#US-28%20%E2%9A%A1103ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode</p>
+				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" data-config="ss://YWVzLTEyOC1nY206MTM3N2Q1Y2ZhZmM5Mjc5YTkwNGRlYjNiZmE0ZjNkZTI@74.201.177.54:14680#US-28%20%E2%9A%A1103ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode" onclick="copyToClipboard(this.dataset.config)">
 					<i class="far fa-copy me-1"></i> Copy Configuration
 				</button>
 			</div>
@@ -388,10 +420,11 @@
 			<div class="glass-card p-4 h-100">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<span class="node-rank">RANK #29</span>
-					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> Verified</div>
+					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> US 112ms</div>
 				</div>
-				<p class="small text-truncate text-secondary mb-4">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.162:443#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.162-0110#⚡39ms-RankedByMegaCode</p>
-				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" onclick="copyToClipboard('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.162:443#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.162-0110#⚡39ms-RankedByMegaCode')">
+				<p class="small text-info mb-2">AI · Gaming · YouTube · Instagram</p>
+				<p class="small text-truncate text-secondary mb-4">vless://454431fc-71e2-42b1-b375-5b55dd06666a@216.222.201.73:443?security=reality&amp;encryption=none&amp;pbk=aUdvs6o4PHN6jmdkIKBA2rHsN_7l8W2SaDfNgzn-BwU&amp;headerType=none&amp;fp=chrome&amp;type=tcp&amp;sni=example.org#US-29%20%E2%9A%A1112ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode</p>
+				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" data-config="vless://454431fc-71e2-42b1-b375-5b55dd06666a@216.222.201.73:443?security=reality&amp;encryption=none&amp;pbk=aUdvs6o4PHN6jmdkIKBA2rHsN_7l8W2SaDfNgzn-BwU&amp;headerType=none&amp;fp=chrome&amp;type=tcp&amp;sni=example.org#US-29%20%E2%9A%A1112ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode" onclick="copyToClipboard(this.dataset.config)">
 					<i class="far fa-copy me-1"></i> Copy Configuration
 				</button>
 			</div>
@@ -400,10 +433,11 @@
 			<div class="glass-card p-4 h-100">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<span class="node-rank">RANK #30</span>
-					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> Verified</div>
+					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> US 113ms</div>
 				</div>
-				<p class="small text-truncate text-secondary mb-4">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.205:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.205-0090#⚡39ms-RankedByMegaCode</p>
-				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" onclick="copyToClipboard('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.205:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.205-0090#⚡39ms-RankedByMegaCode')">
+				<p class="small text-info mb-2">AI · Gaming · YouTube · Instagram</p>
+				<p class="small text-truncate text-secondary mb-4">vless://949d278e-6d98-4014-84e9-59f1c6c93e0e@137.175.82.40:30556?security=reality&amp;type=tcp&amp;packetEncoding=none&amp;sni=www.lovelive-anime.jp&amp;fp=chrome&amp;flow=xtls-rprx-vision&amp;sid=d082f567&amp;pbk=EcmNQqZxyW4GCEQF-7nH54w3qgBkLzsfqFSgafGjB0E#US-30%20%E2%9A%A1113ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode</p>
+				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" data-config="vless://949d278e-6d98-4014-84e9-59f1c6c93e0e@137.175.82.40:30556?security=reality&amp;type=tcp&amp;packetEncoding=none&amp;sni=www.lovelive-anime.jp&amp;fp=chrome&amp;flow=xtls-rprx-vision&amp;sid=d082f567&amp;pbk=EcmNQqZxyW4GCEQF-7nH54w3qgBkLzsfqFSgafGjB0E#US-30%20%E2%9A%A1113ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode" onclick="copyToClipboard(this.dataset.config)">
 					<i class="far fa-copy me-1"></i> Copy Configuration
 				</button>
 			</div>
@@ -412,10 +446,11 @@
 			<div class="glass-card p-4 h-100">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<span class="node-rank">RANK #31</span>
-					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> Verified</div>
+					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> US 117ms</div>
 				</div>
-				<p class="small text-truncate text-secondary mb-4">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.179:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.179-0100#⚡39ms-RankedByMegaCode</p>
-				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" onclick="copyToClipboard('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.179:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.179-0100#⚡39ms-RankedByMegaCode')">
+				<p class="small text-info mb-2">AI · Gaming · YouTube · Instagram</p>
+				<p class="small text-truncate text-secondary mb-4">hysteria2://dongtaiwang.com@142.249.37.90:44356/?sni=hy2.561891.xyz#US-31%20%E2%9A%A1117ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode</p>
+				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" data-config="hysteria2://dongtaiwang.com@142.249.37.90:44356/?sni=hy2.561891.xyz#US-31%20%E2%9A%A1117ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode" onclick="copyToClipboard(this.dataset.config)">
 					<i class="far fa-copy me-1"></i> Copy Configuration
 				</button>
 			</div>
@@ -424,10 +459,11 @@
 			<div class="glass-card p-4 h-100">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<span class="node-rank">RANK #32</span>
-					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> Verified</div>
+					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> US 117ms</div>
 				</div>
-				<p class="small text-truncate text-secondary mb-4">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.49:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.49-0121#⚡39ms-RankedByMegaCode</p>
-				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" onclick="copyToClipboard('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.49:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.49-0121#⚡39ms-RankedByMegaCode')">
+				<p class="small text-info mb-2">AI · Gaming · YouTube · Instagram</p>
+				<p class="small text-truncate text-secondary mb-4">vless://454431fc-71e2-42b1-b375-5b55dd06666a@us.monkora.org:443?encryption=none&amp;security=reality&amp;sni=example.org&amp;fp=random&amp;pbk=aUdvs6o4PHN6jmdkIKBA2rHsN_7l8W2SaDfNgzn-BwU&amp;type=tcp#US-32%20%E2%9A%A1117ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode</p>
+				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" data-config="vless://454431fc-71e2-42b1-b375-5b55dd06666a@us.monkora.org:443?encryption=none&amp;security=reality&amp;sni=example.org&amp;fp=random&amp;pbk=aUdvs6o4PHN6jmdkIKBA2rHsN_7l8W2SaDfNgzn-BwU&amp;type=tcp#US-32%20%E2%9A%A1117ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode" onclick="copyToClipboard(this.dataset.config)">
 					<i class="far fa-copy me-1"></i> Copy Configuration
 				</button>
 			</div>
@@ -436,10 +472,11 @@
 			<div class="glass-card p-4 h-100">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<span class="node-rank">RANK #33</span>
-					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> Verified</div>
+					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> US 119ms</div>
 				</div>
-				<p class="small text-truncate text-secondary mb-4">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.218:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.218-0118#⚡39ms-RankedByMegaCode</p>
-				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" onclick="copyToClipboard('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.218:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.218-0118#⚡39ms-RankedByMegaCode')">
+				<p class="small text-info mb-2">AI · Gaming · YouTube · Instagram</p>
+				<p class="small text-truncate text-secondary mb-4">hy2://5a4c13ae-6673-11ee-a149-f23c9164ca5d@f452bbe9-tmm5c0-tpda83-1lkbs.los.hyhuawei.com:443?insecure=1&amp;sni=f452bbe9-tmm5c0-tpda83-1lkbs.los.hyhuawei.com#US-33%20%E2%9A%A1119ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode</p>
+				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" data-config="hy2://5a4c13ae-6673-11ee-a149-f23c9164ca5d@f452bbe9-tmm5c0-tpda83-1lkbs.los.hyhuawei.com:443?insecure=1&amp;sni=f452bbe9-tmm5c0-tpda83-1lkbs.los.hyhuawei.com#US-33%20%E2%9A%A1119ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode" onclick="copyToClipboard(this.dataset.config)">
 					<i class="far fa-copy me-1"></i> Copy Configuration
 				</button>
 			</div>
@@ -448,10 +485,11 @@
 			<div class="glass-card p-4 h-100">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<span class="node-rank">RANK #34</span>
-					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> Verified</div>
+					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> US 121ms</div>
 				</div>
-				<p class="small text-truncate text-secondary mb-4">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.3:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.3-0119#⚡40ms-RankedByMegaCode</p>
-				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" onclick="copyToClipboard('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.3:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.3-0119#⚡40ms-RankedByMegaCode')">
+				<p class="small text-info mb-2">AI · Gaming · YouTube · Instagram</p>
+				<p class="small text-truncate text-secondary mb-4">vless://454431fc-71e2-42b1-b375-5b55dd06666a@216.222.201.73:443?encryption=none&amp;security=reality&amp;sni=example.org&amp;fp=random&amp;pbk=aUdvs6o4PHN6jmdkIKBA2rHsN_7l8W2SaDfNgzn-BwU&amp;type=tcp#US-34%20%E2%9A%A1121ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode</p>
+				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" data-config="vless://454431fc-71e2-42b1-b375-5b55dd06666a@216.222.201.73:443?encryption=none&amp;security=reality&amp;sni=example.org&amp;fp=random&amp;pbk=aUdvs6o4PHN6jmdkIKBA2rHsN_7l8W2SaDfNgzn-BwU&amp;type=tcp#US-34%20%E2%9A%A1121ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode" onclick="copyToClipboard(this.dataset.config)">
 					<i class="far fa-copy me-1"></i> Copy Configuration
 				</button>
 			</div>
@@ -460,10 +498,11 @@
 			<div class="glass-card p-4 h-100">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<span class="node-rank">RANK #35</span>
-					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> Verified</div>
+					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> US 124ms</div>
 				</div>
-				<p class="small text-truncate text-secondary mb-4">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.47:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.47-0124#⚡40ms-RankedByMegaCode</p>
-				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" onclick="copyToClipboard('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.47:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.47-0124#⚡40ms-RankedByMegaCode')">
+				<p class="small text-info mb-2">AI · Gaming · YouTube · Instagram</p>
+				<p class="small text-truncate text-secondary mb-4">vless://c64a5cfa-0fd6-4978-b062-6e89da013260@34.3.101.206:443?encryption=none&amp;flow=xtls-rprx-vision&amp;security=reality&amp;sni=gateway.icloud.com&amp;fp=random&amp;pbk=C4ky4RduL1cfjZ3okHXDkpD2Ns4DViMkB-mDlisBrzc&amp;sid=8a17287288cf25e5&amp;type=tcp#US-35%20%E2%9A%A1124ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode</p>
+				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" data-config="vless://c64a5cfa-0fd6-4978-b062-6e89da013260@34.3.101.206:443?encryption=none&amp;flow=xtls-rprx-vision&amp;security=reality&amp;sni=gateway.icloud.com&amp;fp=random&amp;pbk=C4ky4RduL1cfjZ3okHXDkpD2Ns4DViMkB-mDlisBrzc&amp;sid=8a17287288cf25e5&amp;type=tcp#US-35%20%E2%9A%A1124ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode" onclick="copyToClipboard(this.dataset.config)">
 					<i class="far fa-copy me-1"></i> Copy Configuration
 				</button>
 			</div>
@@ -472,10 +511,11 @@
 			<div class="glass-card p-4 h-100">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<span class="node-rank">RANK #36</span>
-					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> Verified</div>
+					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> US 126ms</div>
 				</div>
-				<p class="small text-truncate text-secondary mb-4">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.203:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.203-0107#⚡41ms-RankedByMegaCode</p>
-				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" onclick="copyToClipboard('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.203:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.203-0107#⚡41ms-RankedByMegaCode')">
+				<p class="small text-info mb-2">Gaming · YouTube · Instagram</p>
+				<p class="small text-truncate text-secondary mb-4">vless://7ab29f89-6eef-4171-b232-fc4f580ad31b@172.235.43.210:53957?flow=xtls-rprx-vision&amp;fp=edge&amp;pbk=XUHlbk5VH5z4E2wxZBhlpLZ33qevyQgqU7dheRDgoGQ&amp;security=reality&amp;sid=44e82fd7b97b14&amp;sni=www.nvidia.com&amp;spx=%2F&amp;type=tcp#US-36%20%E2%9A%A1126ms%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode</p>
+				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" data-config="vless://7ab29f89-6eef-4171-b232-fc4f580ad31b@172.235.43.210:53957?flow=xtls-rprx-vision&amp;fp=edge&amp;pbk=XUHlbk5VH5z4E2wxZBhlpLZ33qevyQgqU7dheRDgoGQ&amp;security=reality&amp;sid=44e82fd7b97b14&amp;sni=www.nvidia.com&amp;spx=%2F&amp;type=tcp#US-36%20%E2%9A%A1126ms%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode" onclick="copyToClipboard(this.dataset.config)">
 					<i class="far fa-copy me-1"></i> Copy Configuration
 				</button>
 			</div>
@@ -484,10 +524,11 @@
 			<div class="glass-card p-4 h-100">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<span class="node-rank">RANK #37</span>
-					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> Verified</div>
+					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> US 132ms</div>
 				</div>
-				<p class="small text-truncate text-secondary mb-4">ss://YWVzLTEyOC1nY206c2hhZG93c29ja3M=@156.146.38.167:443#%F0%9F%87%BA%F0%9F%87%B8US-156.146.38.167-0075#⚡41ms-RankedByMegaCode</p>
-				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" onclick="copyToClipboard('ss://YWVzLTEyOC1nY206c2hhZG93c29ja3M=@156.146.38.167:443#%F0%9F%87%BA%F0%9F%87%B8US-156.146.38.167-0075#⚡41ms-RankedByMegaCode')">
+				<p class="small text-info mb-2">Gaming · YouTube · Instagram</p>
+				<p class="small text-truncate text-secondary mb-4">vless://7ab29f89-6eef-4171-b232-fc4f580ad31b@172.235.43.210:53957?flow=xtls-rprx-vision&amp;fp=firefox&amp;pbk=XUHlbk5VH5z4E2wxZBhlpLZ33qevyQgqU7dheRDgoGQ&amp;security=reality&amp;sid=44e82fd7b97b14&amp;sni=www.nvidia.com&amp;type=tcp#US-37%20%E2%9A%A1132ms%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode</p>
+				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" data-config="vless://7ab29f89-6eef-4171-b232-fc4f580ad31b@172.235.43.210:53957?flow=xtls-rprx-vision&amp;fp=firefox&amp;pbk=XUHlbk5VH5z4E2wxZBhlpLZ33qevyQgqU7dheRDgoGQ&amp;security=reality&amp;sid=44e82fd7b97b14&amp;sni=www.nvidia.com&amp;type=tcp#US-37%20%E2%9A%A1132ms%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode" onclick="copyToClipboard(this.dataset.config)">
 					<i class="far fa-copy me-1"></i> Copy Configuration
 				</button>
 			</div>
@@ -496,10 +537,11 @@
 			<div class="glass-card p-4 h-100">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<span class="node-rank">RANK #38</span>
-					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> Verified</div>
+					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> US 132ms</div>
 				</div>
-				<p class="small text-truncate text-secondary mb-4">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.2:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.2-0125#⚡41ms-RankedByMegaCode</p>
-				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" onclick="copyToClipboard('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.2:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.2-0125#⚡41ms-RankedByMegaCode')">
+				<p class="small text-info mb-2">AI · Gaming · YouTube · Instagram</p>
+				<p class="small text-truncate text-secondary mb-4">hy2://RN_3f80eeb4bbd0f13f@192.255.128.123:443?insecure=1#US-38%20%E2%9A%A1132ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode</p>
+				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" data-config="hy2://RN_3f80eeb4bbd0f13f@192.255.128.123:443?insecure=1#US-38%20%E2%9A%A1132ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode" onclick="copyToClipboard(this.dataset.config)">
 					<i class="far fa-copy me-1"></i> Copy Configuration
 				</button>
 			</div>
@@ -508,10 +550,11 @@
 			<div class="glass-card p-4 h-100">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<span class="node-rank">RANK #39</span>
-					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> Verified</div>
+					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> US 134ms</div>
 				</div>
-				<p class="small text-truncate text-secondary mb-4">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.174:443#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.174-0126#⚡41ms-RankedByMegaCode</p>
-				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" onclick="copyToClipboard('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.174:443#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.174-0126#⚡41ms-RankedByMegaCode')">
+				<p class="small text-info mb-2">Gaming · YouTube · Instagram</p>
+				<p class="small text-truncate text-secondary mb-4">vless://bca46025-bf43-40c0-895b-054a6fbcfd32@172.235.38.85:42942?security=reality&amp;encryption=none&amp;pbk=JmkfJoDWpAqt6gj4cbc4_cwItsdryMlV7joAGfNTKQU&amp;headerType=none&amp;fp=chrome&amp;type=tcp&amp;flow=xtls-rprx-vision&amp;sni=www.tesla.com&amp;sid=a56d7d8da977f860#US-39%20%E2%9A%A1134ms%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode</p>
+				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" data-config="vless://bca46025-bf43-40c0-895b-054a6fbcfd32@172.235.38.85:42942?security=reality&amp;encryption=none&amp;pbk=JmkfJoDWpAqt6gj4cbc4_cwItsdryMlV7joAGfNTKQU&amp;headerType=none&amp;fp=chrome&amp;type=tcp&amp;flow=xtls-rprx-vision&amp;sni=www.tesla.com&amp;sid=a56d7d8da977f860#US-39%20%E2%9A%A1134ms%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode" onclick="copyToClipboard(this.dataset.config)">
 					<i class="far fa-copy me-1"></i> Copy Configuration
 				</button>
 			</div>
@@ -520,10 +563,11 @@
 			<div class="glass-card p-4 h-100">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<span class="node-rank">RANK #40</span>
-					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> Verified</div>
+					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> US 134ms</div>
 				</div>
-				<p class="small text-truncate text-secondary mb-4">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@193.29.139.204:8080#%F0%9F%87%B3%F0%9F%87%B1NL-193.29.139.204-0111#⚡41ms-RankedByMegaCode</p>
-				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" onclick="copyToClipboard('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@193.29.139.204:8080#%F0%9F%87%B3%F0%9F%87%B1NL-193.29.139.204-0111#⚡41ms-RankedByMegaCode')">
+				<p class="small text-info mb-2">Gaming · YouTube · Instagram</p>
+				<p class="small text-truncate text-secondary mb-4">vless://7ab29f89-6eef-4171-b232-fc4f580ad31b@172.235.43.210:53957?flow=xtls-rprx-vision&amp;fp=ios&amp;pbk=XUHlbk5VH5z4E2wxZBhlpLZ33qevyQgqU7dheRDgoGQ&amp;security=reality&amp;sid=44e82fd7b97b14&amp;sni=www.nvidia.com&amp;type=tcp#US-40%20%E2%9A%A1134ms%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode</p>
+				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" data-config="vless://7ab29f89-6eef-4171-b232-fc4f580ad31b@172.235.43.210:53957?flow=xtls-rprx-vision&amp;fp=ios&amp;pbk=XUHlbk5VH5z4E2wxZBhlpLZ33qevyQgqU7dheRDgoGQ&amp;security=reality&amp;sid=44e82fd7b97b14&amp;sni=www.nvidia.com&amp;type=tcp#US-40%20%E2%9A%A1134ms%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode" onclick="copyToClipboard(this.dataset.config)">
 					<i class="far fa-copy me-1"></i> Copy Configuration
 				</button>
 			</div>
@@ -532,10 +576,11 @@
 			<div class="glass-card p-4 h-100">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<span class="node-rank">RANK #41</span>
-					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> Verified</div>
+					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> US 137ms</div>
 				</div>
-				<p class="small text-truncate text-secondary mb-4">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpab1p0ZlBPeVZ2bUtBUlVO@140.82.63.79:8388#%F0%9F%87%BA%F0%9F%87%B8US-140.82.63.79-0175#⚡42ms-RankedByMegaCode</p>
-				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" onclick="copyToClipboard('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpab1p0ZlBPeVZ2bUtBUlVO@140.82.63.79:8388#%F0%9F%87%BA%F0%9F%87%B8US-140.82.63.79-0175#⚡42ms-RankedByMegaCode')">
+				<p class="small text-info mb-2">AI · Gaming · YouTube · Instagram</p>
+				<p class="small text-truncate text-secondary mb-4">vless://3969ccbc-7bb3-4def-a9b4-26e2c84b66f8@156.229.162.171:9443?flow=xtls-rprx-vision&amp;fp=random&amp;pbk=0hIFPaEn4RdFib8_eP8HYxMywR5izEwM3JA2W1Zo8U4&amp;security=reality&amp;sid=b390142456517acc&amp;sni=www.amazon.com&amp;type=tcp#US-41%20%E2%9A%A1137ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode</p>
+				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" data-config="vless://3969ccbc-7bb3-4def-a9b4-26e2c84b66f8@156.229.162.171:9443?flow=xtls-rprx-vision&amp;fp=random&amp;pbk=0hIFPaEn4RdFib8_eP8HYxMywR5izEwM3JA2W1Zo8U4&amp;security=reality&amp;sid=b390142456517acc&amp;sni=www.amazon.com&amp;type=tcp#US-41%20%E2%9A%A1137ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode" onclick="copyToClipboard(this.dataset.config)">
 					<i class="far fa-copy me-1"></i> Copy Configuration
 				</button>
 			</div>
@@ -544,10 +589,11 @@
 			<div class="glass-card p-4 h-100">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<span class="node-rank">RANK #42</span>
-					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> Verified</div>
+					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> US 137ms</div>
 				</div>
-				<p class="small text-truncate text-secondary mb-4">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.191:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.191-0094#⚡42ms-RankedByMegaCode</p>
-				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" onclick="copyToClipboard('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.191:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.191-0094#⚡42ms-RankedByMegaCode')">
+				<p class="small text-info mb-2">Gaming · YouTube · Instagram</p>
+				<p class="small text-truncate text-secondary mb-4">vless://7ab29f89-6eef-4171-b232-fc4f580ad31b@172.235.43.210:53957?flow=xtls-rprx-vision&amp;fp=safari&amp;pbk=XUHlbk5VH5z4E2wxZBhlpLZ33qevyQgqU7dheRDgoGQ&amp;security=reality&amp;sid=44e82fd7b97b14&amp;sni=www.nvidia.com&amp;type=tcp#US-42%20%E2%9A%A1137ms%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode</p>
+				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" data-config="vless://7ab29f89-6eef-4171-b232-fc4f580ad31b@172.235.43.210:53957?flow=xtls-rprx-vision&amp;fp=safari&amp;pbk=XUHlbk5VH5z4E2wxZBhlpLZ33qevyQgqU7dheRDgoGQ&amp;security=reality&amp;sid=44e82fd7b97b14&amp;sni=www.nvidia.com&amp;type=tcp#US-42%20%E2%9A%A1137ms%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode" onclick="copyToClipboard(this.dataset.config)">
 					<i class="far fa-copy me-1"></i> Copy Configuration
 				</button>
 			</div>
@@ -556,10 +602,11 @@
 			<div class="glass-card p-4 h-100">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<span class="node-rank">RANK #43</span>
-					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> Verified</div>
+					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> US 139ms</div>
 				</div>
-				<p class="small text-truncate text-secondary mb-4">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.149:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.149-0097#⚡42ms-RankedByMegaCode</p>
-				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" onclick="copyToClipboard('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.149:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.149-0097#⚡42ms-RankedByMegaCode')">
+				<p class="small text-info mb-2">AI · Gaming · YouTube · Instagram</p>
+				<p class="small text-truncate text-secondary mb-4">vless://454431fc-71e2-42b1-b375-5b55dd06666a@216.222.201.73:443?type=tcp&amp;headerType=none&amp;security=reality&amp;encryption=none&amp;sni=example.org&amp;fp=firefox&amp;pbk=aUdvs6o4PHN6jmdkIKBA2rHsN_7l8W2SaDfNgzn-BwU#US-43%20%E2%9A%A1139ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode</p>
+				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" data-config="vless://454431fc-71e2-42b1-b375-5b55dd06666a@216.222.201.73:443?type=tcp&amp;headerType=none&amp;security=reality&amp;encryption=none&amp;sni=example.org&amp;fp=firefox&amp;pbk=aUdvs6o4PHN6jmdkIKBA2rHsN_7l8W2SaDfNgzn-BwU#US-43%20%E2%9A%A1139ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode" onclick="copyToClipboard(this.dataset.config)">
 					<i class="far fa-copy me-1"></i> Copy Configuration
 				</button>
 			</div>
@@ -568,10 +615,11 @@
 			<div class="glass-card p-4 h-100">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<span class="node-rank">RANK #44</span>
-					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> Verified</div>
+					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> US 141ms</div>
 				</div>
-				<p class="small text-truncate text-secondary mb-4">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpHNXA2d3c0bzY3SEI=@108.181.118.10:8388#%F0%9F%87%A8%F0%9F%87%A6CA-108.181.118.10-0078#⚡44ms-RankedByMegaCode</p>
-				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" onclick="copyToClipboard('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpHNXA2d3c0bzY3SEI=@108.181.118.10:8388#%F0%9F%87%A8%F0%9F%87%A6CA-108.181.118.10-0078#⚡44ms-RankedByMegaCode')">
+				<p class="small text-info mb-2">AI · Gaming · YouTube · Instagram</p>
+				<p class="small text-truncate text-secondary mb-4">vmess://eyJhZGQiOiIyMTYuMTA2LjE4NS4xNDEiLCJhaWQiOjAsImhvc3QiOiIiLCJpZCI6IjA0NjIxYmFlLWFiMzYtMTFlYy1iOTA5LTAyNDJhYzEyMDAwMiIsIm5ldCI6InJhdyIsInBhdGgiOiIiLCJwb3J0IjoiMjIzMjQiLCJwcyI6IlVTLTQ0IOKaoTE0MW1zIEFJIMK3IEdhbWluZyDCtyBZb3VUdWJlIMK3IEluc3RhZ3JhbS1SYW5rZWRCeU1lZ2FDb2RlIiwic25pIjoiIiwidGxzIjoiIiwidHlwZSI6Im5vbmUiLCJ2IjoiMiJ9</p>
+				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" data-config="vmess://eyJhZGQiOiIyMTYuMTA2LjE4NS4xNDEiLCJhaWQiOjAsImhvc3QiOiIiLCJpZCI6IjA0NjIxYmFlLWFiMzYtMTFlYy1iOTA5LTAyNDJhYzEyMDAwMiIsIm5ldCI6InJhdyIsInBhdGgiOiIiLCJwb3J0IjoiMjIzMjQiLCJwcyI6IlVTLTQ0IOKaoTE0MW1zIEFJIMK3IEdhbWluZyDCtyBZb3VUdWJlIMK3IEluc3RhZ3JhbS1SYW5rZWRCeU1lZ2FDb2RlIiwic25pIjoiIiwidGxzIjoiIiwidHlwZSI6Im5vbmUiLCJ2IjoiMiJ9" onclick="copyToClipboard(this.dataset.config)">
 					<i class="far fa-copy me-1"></i> Copy Configuration
 				</button>
 			</div>
@@ -580,10 +628,11 @@
 			<div class="glass-card p-4 h-100">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<span class="node-rank">RANK #45</span>
-					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> Verified</div>
+					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> US 158ms</div>
 				</div>
-				<p class="small text-truncate text-secondary mb-4">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.16:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.16-0116#⚡45ms-RankedByMegaCode</p>
-				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" onclick="copyToClipboard('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.16:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.16-0116#⚡45ms-RankedByMegaCode')">
+				<p class="small text-info mb-2">AI · Gaming · YouTube · Instagram</p>
+				<p class="small text-truncate text-secondary mb-4">vless://47fcef29-ab4e-4aa6-932b-d95a18f28a4e@162.159.0.53:8080?host=8nj2r.2k8t.f88.hh.vavava.kdns.fr&amp;path=%2F%3Fed%3D2560security%3Dtls&amp;security=none&amp;type=ws#US-45%20%E2%9A%A1158ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode</p>
+				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" data-config="vless://47fcef29-ab4e-4aa6-932b-d95a18f28a4e@162.159.0.53:8080?host=8nj2r.2k8t.f88.hh.vavava.kdns.fr&amp;path=%2F%3Fed%3D2560security%3Dtls&amp;security=none&amp;type=ws#US-45%20%E2%9A%A1158ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode" onclick="copyToClipboard(this.dataset.config)">
 					<i class="far fa-copy me-1"></i> Copy Configuration
 				</button>
 			</div>
@@ -592,10 +641,11 @@
 			<div class="glass-card p-4 h-100">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<span class="node-rank">RANK #46</span>
-					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> Verified</div>
+					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> US 162ms</div>
 				</div>
-				<p class="small text-truncate text-secondary mb-4">ss://YWVzLTEyOC1nY206c2hhZG93c29ja3M=@37.19.198.244:443#%F0%9F%87%BA%F0%9F%87%B8US-37.19.198.244-0088#⚡47ms-RankedByMegaCode</p>
-				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" onclick="copyToClipboard('ss://YWVzLTEyOC1nY206c2hhZG93c29ja3M=@37.19.198.244:443#%F0%9F%87%BA%F0%9F%87%B8US-37.19.198.244-0088#⚡47ms-RankedByMegaCode')">
+				<p class="small text-info mb-2">AI · Gaming · YouTube · Instagram</p>
+				<p class="small text-truncate text-secondary mb-4">vmess://eyJhZGQiOiIxNjkuMTk3LjE0Mi4yMiIsImFpZCI6IjAiLCJhbHBuIjpudWxsLCJmcCI6bnVsbCwiaG9zdCI6IiIsImlkIjoiZjhjOGRjM2QtMGQzNy00NmIwLThiMzQtYTcyMzI4ODJmY2ZlIiwibmFtZSI6IlVTIFx1ZDgzY1x1ZGRmYVx1ZDgzY1x1ZGRmOCB8IEBSYXlkaWthbHggfCBFMzhEREIiLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiXC8iLCJwb3J0IjoxODAwMCwicHMiOiJVUy00NiDimqExNjJtcyBBSSDCtyBHYW1pbmcgwrcgWW91VHViZSDCtyBJbnN0YWdyYW0tUmFua2VkQnlNZWdhQ29kZSIsInNjeSI6ImF1dG8iLCJzbmkiOm51bGwsInRscyI6Im5vbmUiLCJ0eXBlIjpudWxsLCJ2IjpudWxsfQ==</p>
+				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" data-config="vmess://eyJhZGQiOiIxNjkuMTk3LjE0Mi4yMiIsImFpZCI6IjAiLCJhbHBuIjpudWxsLCJmcCI6bnVsbCwiaG9zdCI6IiIsImlkIjoiZjhjOGRjM2QtMGQzNy00NmIwLThiMzQtYTcyMzI4ODJmY2ZlIiwibmFtZSI6IlVTIFx1ZDgzY1x1ZGRmYVx1ZDgzY1x1ZGRmOCB8IEBSYXlkaWthbHggfCBFMzhEREIiLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiXC8iLCJwb3J0IjoxODAwMCwicHMiOiJVUy00NiDimqExNjJtcyBBSSDCtyBHYW1pbmcgwrcgWW91VHViZSDCtyBJbnN0YWdyYW0tUmFua2VkQnlNZWdhQ29kZSIsInNjeSI6ImF1dG8iLCJzbmkiOm51bGwsInRscyI6Im5vbmUiLCJ0eXBlIjpudWxsLCJ2IjpudWxsfQ==" onclick="copyToClipboard(this.dataset.config)">
 					<i class="far fa-copy me-1"></i> Copy Configuration
 				</button>
 			</div>
@@ -604,10 +654,11 @@
 			<div class="glass-card p-4 h-100">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<span class="node-rank">RANK #47</span>
-					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> Verified</div>
+					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> US 168ms</div>
 				</div>
-				<p class="small text-truncate text-secondary mb-4">ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.208:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.208-0099#⚡47ms-RankedByMegaCode</p>
-				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" onclick="copyToClipboard('ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.208:8080#%F0%9F%87%AC%F0%9F%87%A7GB-82.38.31.208-0099#⚡47ms-RankedByMegaCode')">
+				<p class="small text-info mb-2">AI · Gaming · YouTube · Instagram</p>
+				<p class="small text-truncate text-secondary mb-4">vless://47fcef29-ab4e-4aa6-932b-d95a18f28a4e@108.162.198.178:2095?eh=Sec-WebSocket-Protocol&amp;encryption=none&amp;host=8nj2r.2k8t.f88.hh.vavava.kdns.fr&amp;path=%2F&amp;security=none&amp;type=ws#US-47%20%E2%9A%A1168ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode</p>
+				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" data-config="vless://47fcef29-ab4e-4aa6-932b-d95a18f28a4e@108.162.198.178:2095?eh=Sec-WebSocket-Protocol&amp;encryption=none&amp;host=8nj2r.2k8t.f88.hh.vavava.kdns.fr&amp;path=%2F&amp;security=none&amp;type=ws#US-47%20%E2%9A%A1168ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode" onclick="copyToClipboard(this.dataset.config)">
 					<i class="far fa-copy me-1"></i> Copy Configuration
 				</button>
 			</div>
@@ -616,10 +667,11 @@
 			<div class="glass-card p-4 h-100">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<span class="node-rank">RANK #48</span>
-					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> Verified</div>
+					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> CA 172ms</div>
 				</div>
-				<p class="small text-truncate text-secondary mb-4">ss://YWVzLTEyOC1nY206c2hhZG93c29ja3M=@156.146.38.169:443#%F0%9F%87%BA%F0%9F%87%B8US-156.146.38.169-0077#⚡52ms-RankedByMegaCode</p>
-				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" onclick="copyToClipboard('ss://YWVzLTEyOC1nY206c2hhZG93c29ja3M=@156.146.38.169:443#%F0%9F%87%BA%F0%9F%87%B8US-156.146.38.169-0077#⚡52ms-RankedByMegaCode')">
+				<p class="small text-info mb-2">AI · Gaming · YouTube · Instagram</p>
+				<p class="small text-truncate text-secondary mb-4">ss://YWVzLTI1Ni1nY206ZXZlYWFUT2I4amk4eW50dzJaOXlXVUcwZDZJcjhMZDhtM3ltSDhUSGRDNWVnaVRIMW1YQ2lCYzBTa3I3RmliSA==@138.199.48.82:9443?#CA-48%20%E2%9A%A1172ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode</p>
+				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" data-config="ss://YWVzLTI1Ni1nY206ZXZlYWFUT2I4amk4eW50dzJaOXlXVUcwZDZJcjhMZDhtM3ltSDhUSGRDNWVnaVRIMW1YQ2lCYzBTa3I3RmliSA==@138.199.48.82:9443?#CA-48%20%E2%9A%A1172ms%20AI%20%C2%B7%20Gaming%20%C2%B7%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode" onclick="copyToClipboard(this.dataset.config)">
 					<i class="far fa-copy me-1"></i> Copy Configuration
 				</button>
 			</div>
@@ -628,10 +680,11 @@
 			<div class="glass-card p-4 h-100">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<span class="node-rank">RANK #49</span>
-					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> Verified</div>
+					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> CA 173ms</div>
 				</div>
-				<p class="small text-truncate text-secondary mb-4">ss://cmM0LW1kNToxNGZGUHJiZXpFM0hEWnpzTU9yNg==@137.184.174.93:8080#%F0%9F%87%A8%F0%9F%87%A6CA-137.184.174.93-0086#⚡57ms-RankedByMegaCode</p>
-				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" onclick="copyToClipboard('ss://cmM0LW1kNToxNGZGUHJiZXpFM0hEWnpzTU9yNg==@137.184.174.93:8080#%F0%9F%87%A8%F0%9F%87%A6CA-137.184.174.93-0086#⚡57ms-RankedByMegaCode')">
+				<p class="small text-info mb-2">AI · Gaming · YouTube · Instagram</p>
+				<p class="small text-truncate text-secondary mb-4">vmess://eyJhZGQiOiIxMzQuMTk1LjE5Ni4yMTEiLCJhaWQiOiIwIiwiYWxwbiI6IiIsImZwIjoiIiwiaG9zdCI6IiIsImlkIjoiZjhjOGRjM2QtMGQzNy00NmIwLThiMzQtYTcyMzI4ODJmY2ZlIiwiaW5zZWN1cmUiOiIwIiwibmFtZSI6IkNBIPCfh6jwn4emIHwgQFJheWRpa2FseCB8IEE1M0RBQyIsIm5ldCI6InRjcCIsInBhdGgiOiIiLCJwY3MiOiIiLCJwb3J0IjoxODAwMCwicHMiOiJDQS00OSDimqExNzNtcyBBSSDCtyBHYW1pbmcgwrcgWW91VHViZSDCtyBJbnN0YWdyYW0tUmFua2VkQnlNZWdhQ29kZSIsInNjeSI6ImF1dG8iLCJzbmkiOiIiLCJ0bHMiOiJub25lIiwidHlwZSI6Im5vbmUiLCJ2IjoiMiIsInZjbiI6IiJ9</p>
+				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" data-config="vmess://eyJhZGQiOiIxMzQuMTk1LjE5Ni4yMTEiLCJhaWQiOiIwIiwiYWxwbiI6IiIsImZwIjoiIiwiaG9zdCI6IiIsImlkIjoiZjhjOGRjM2QtMGQzNy00NmIwLThiMzQtYTcyMzI4ODJmY2ZlIiwiaW5zZWN1cmUiOiIwIiwibmFtZSI6IkNBIPCfh6jwn4emIHwgQFJheWRpa2FseCB8IEE1M0RBQyIsIm5ldCI6InRjcCIsInBhdGgiOiIiLCJwY3MiOiIiLCJwb3J0IjoxODAwMCwicHMiOiJDQS00OSDimqExNzNtcyBBSSDCtyBHYW1pbmcgwrcgWW91VHViZSDCtyBJbnN0YWdyYW0tUmFua2VkQnlNZWdhQ29kZSIsInNjeSI6ImF1dG8iLCJzbmkiOiIiLCJ0bHMiOiJub25lIiwidHlwZSI6Im5vbmUiLCJ2IjoiMiIsInZjbiI6IiJ9" onclick="copyToClipboard(this.dataset.config)">
 					<i class="far fa-copy me-1"></i> Copy Configuration
 				</button>
 			</div>
@@ -640,10 +693,11 @@
 			<div class="glass-card p-4 h-100">
 				<div class="d-flex justify-content-between align-items-center mb-3">
 					<span class="node-rank">RANK #50</span>
-					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> Verified</div>
+					<div class="text-success small fw-bold"><i class="fas fa-shield-alt"></i> CA 174ms</div>
 				</div>
-				<p class="small text-truncate text-secondary mb-4">ss://YWVzLTEyOC1nY206NjJkZDc1YmE5NDQ5NDdkNGNhOTgzY2YxNjc5YjM3OTc=@173.234.25.90:15240#%F0%9F%87%BA%F0%9F%87%B8US-173.234.25.90-0082#⚡72ms-RankedByMegaCode</p>
-				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" onclick="copyToClipboard('ss://YWVzLTEyOC1nY206NjJkZDc1YmE5NDQ5NDdkNGNhOTgzY2YxNjc5YjM3OTc=@173.234.25.90:15240#%F0%9F%87%BA%F0%9F%87%B8US-173.234.25.90-0082#⚡72ms-RankedByMegaCode')">
+				<p class="small text-info mb-2">AI · Gaming · YouTube · Instagram</p>
+				<p class="small text-truncate text-secondary mb-4">vmess://eyJhZGQiOiIxMzQuMTk1LjE5Ni4yMTEiLCJhaWQiOjAsImhvc3QiOiIiLCJpZCI6ImY4YzhkYzNkLTBkMzctNDZiMC04YjM0LWE3MjMyODgyZmNmZSIsIm5ldCI6InRjcCIsInBhdGgiOiIvIiwicG9ydCI6IjE4MDAwIiwicHMiOiJDQS01MCDimqExNzRtcyBBSSDCtyBHYW1pbmcgwrcgWW91VHViZSDCtyBJbnN0YWdyYW0tUmFua2VkQnlNZWdhQ29kZSIsInNuaSI6IiIsInRscyI6IiIsInR5cGUiOiJub25lIiwidiI6IjIifQ==</p>
+				<button class="btn btn-sm btn-primary w-100 rounded-3 py-2" data-config="vmess://eyJhZGQiOiIxMzQuMTk1LjE5Ni4yMTEiLCJhaWQiOjAsImhvc3QiOiIiLCJpZCI6ImY4YzhkYzNkLTBkMzctNDZiMC04YjM0LWE3MjMyODgyZmNmZSIsIm5ldCI6InRjcCIsInBhdGgiOiIvIiwicG9ydCI6IjE4MDAwIiwicHMiOiJDQS01MCDimqExNzRtcyBBSSDCtyBHYW1pbmcgwrcgWW91VHViZSDCtyBJbnN0YWdyYW0tUmFua2VkQnlNZWdhQ29kZSIsInNuaSI6IiIsInRscyI6IiIsInR5cGUiOiJub25lIiwidiI6IjIifQ==" onclick="copyToClipboard(this.dataset.config)">
 					<i class="far fa-copy me-1"></i> Copy Configuration
 				</button>
 			</div>
@@ -653,9 +707,9 @@
 		<div class="text-center mt-5">
 			<div class="visitor-badge animate__animated animate__fadeIn">
 				<i class="fas fa-chart-line text-primary me-2"></i> GLOBAL REACH: 
-				<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://rostamimohammadamin8.github.io/Starlink-V2ray-Scanner/&count_bg=%%233B82F6&title_bg=%%23080C14&icon=&icon_color=%%23E7E7E7&title=hits&edge_flat=true" alt="Hits" style="vertical-align: middle;"/>
+				<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://rostamimohammadamin8.github.io/Starlink-V2ray-Scanner/&count_bg=%233B82F6&title_bg=%23080C14&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=true" alt="Hits" style="vertical-align: middle;"/>
 			</div>
-			<p class="small text-muted mt-3">Last System Pulse: Oct 03, 02:27 | Build v5.0 Stable</p>
+			<p class="small text-muted mt-3">Last System Pulse: Oct 03, 07:05 | Build v5.0 Stable</p>
 		</div>
 
 		<div class="modal fade" id="helpModal" tabindex="-1">

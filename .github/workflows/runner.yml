@@ -21,13 +21,31 @@ jobs:
           go-version: '1.21'
           cache: false # Disabled to prevent "Cache folder not found" warnings
 
-      - name: Execute MegaCode Engine
-        run: go run main.go
+      - name: Collect Candidate Configs
+        run: go run main.go collect
+
+      - name: Install xray-knife
+        env:
+          XRAY_KNIFE_VERSION: v11.3.0
+          XRAY_KNIFE_SHA256: ad803fe2b0cfcecb1d87423effa98a36ae95587d56a377446a84e3a811b7f83b
+        run: |
+          curl -sSfL -o xray-knife.zip "https://github.com/lilendian0x00/xray-knife/releases/download/${XRAY_KNIFE_VERSION}/Xray-knife-linux-64.zip"
+          echo "${XRAY_KNIFE_SHA256}  xray-knife.zip" | sha256sum -c -
+          unzip -o -q xray-knife.zip xray-knife -d "$RUNNER_TEMP"
+
+      - name: Test Configs Through Real Proxy Connections
+        run: >-
+          "$RUNNER_TEMP/xray-knife" http -f candidates.txt -x jsonl -o results.jsonl
+          -t 50 -d 8000 --prescan --diagnose=false --quiet --url-success-threshold 0.01
+          --test-urls "https://cloudflare.com/cdn-cgi/trace,https://api.openai.com/v1/models,https://api.anthropic.com/v1/models,https://gemini.google.com/,https://www.youtube.com/generate_204,https://www.instagram.com/"
+
+      - name: Build Ranked Output
+        run: go run main.go build
 
       - name: Deploy to GitHub Pages
         run: |
           git config --global user.name "MegaCode-Bot"
           git config --global user.email "bot@megacode.ultra"
-          git add index.html cleaned_configs.txt
+          git add index.html cleaned_configs.txt subs/
           git commit -m "🚀 Ultra UX Update: Nodes Re-Sorted [$(date)]" || echo "No changes to commit"
           git push
