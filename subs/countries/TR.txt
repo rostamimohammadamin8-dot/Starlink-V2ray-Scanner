@@ -1,0 +1,2 @@
+vless://9ef61079-6f7d-4911-9608-943da85d8e6f@178.83.46.216:2053?encryption=none&security=none&type=tcp#TR-01%20%E2%9A%A11032ms%20YouTube%20%C2%B7%20Instagram-RankedByMegaCode
+vless://c0e8fb58-a60f-4c15-9444-4e7c109797a8@176.96.131.251:1280?path=/&security=&encryption=none&type=ws#TR-02%20%E2%9A%A12142ms%20StaticIP-RankedByMegaCode
