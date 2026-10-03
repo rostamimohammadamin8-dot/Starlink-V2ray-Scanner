@@ -22,7 +22,7 @@ jobs:
           cache: false # Disabled to prevent "Cache folder not found" warnings
 
       - name: Collect Candidate Configs
-        run: go run main.go collect
+        run: go run . collect
 
       - name: Install xray-knife
         env:
@@ -40,7 +40,7 @@ jobs:
           --test-urls "https://cloudflare.com/cdn-cgi/trace,https://api.openai.com/v1/models,https://api.anthropic.com/v1/models,https://gemini.google.com/,https://www.youtube.com/generate_204,https://www.instagram.com/"
 
       - name: Build Ranked Output
-        run: go run main.go build
+        run: go run . build
 
       - name: Deploy to GitHub Pages
         run: |

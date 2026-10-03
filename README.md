@@ -25,11 +25,25 @@ Each config is tested through a real proxy connection against several services, 
 
 ### ⚙️ How it works
 Every 6 hours the workflow:
-1. `go run main.go collect` downloads the sources listed in `main.go`, decodes plain or base64 subscriptions, keeps only valid `vmess`/`vless`/`trojan`/`ss`/`hysteria2`/`tuic` links and writes up to 150 random candidates per source to `candidates.txt`.
+1. `go run . collect` downloads the sources listed in `sources.go`, decodes plain or base64 subscriptions, keeps only valid `vmess`/`vless`/`trojan`/`ss`/`hysteria2`/`tuic` links and writes up to 150 random candidates per source to `candidates.txt`.
 2. [xray-knife](https://github.com/lilendian0x00/xray-knife) connects through every candidate, requests each test URL above and records the results in `results.jsonl`.
-3. `go run main.go build` keeps the 50 fastest configs that passed, regenerates `cleaned_configs.txt`, `index.html` and the `subs/` lists.
+3. `go run . build` keeps the 50 fastest configs that passed, regenerates `cleaned_configs.txt`, `index.html` and the `subs/` lists.
 
 Sources were chosen by testing a random sample from each public collector; only those where at least 40% of the sampled configs worked were kept. Results are measured from GitHub's servers, so availability from your own network may differ.
+
+### 🗂️ Project structure
+| File | Purpose |
+|---|---|
+| `main.go` | Entry point: `go run . collect` / `go run . build` |
+| `config.go` | Limits, file names, test endpoint labels, AI-restricted countries |
+| `sources.go` | Subscription sources and supported link schemes |
+| `subscription.go` | Downloading, base64 decoding, link validation, server dedupe |
+| `collect.go` | Builds `candidates.txt` from all sources |
+| `results.go` | Reads xray-knife results and classifies each config |
+| `categories.go` | Use-case lists written to `subs/` |
+| `output.go` | Remarks, ranking and writing the output files |
+| `panel.go` | The `index.html` dashboard |
+| `docs/` | Guides (Persian) |
 
 ### 🔐 Personal config without a VPS
 To build your own private subscription on a free Cloudflare account (no VPS, no bank card), see the Persian guide: [docs/personal-config-cloudflare-fa.md](docs/personal-config-cloudflare-fa.md).
