@@ -85,11 +85,57 @@ func build() error {
 		fmt.Printf("%4d configs in %s\n", len(matched), c.File)
 	}
 
-	if len(nodes) > MaxNodes {
-		nodes = nodes[:MaxNodes]
+	byCountry := map[string][]rankedNode{}
+	for _, node := range nodes {
+		if node.Location != "XX" && len(byCountry[node.Location]) < MaxNodes {
+			byCountry[node.Location] = append(byCountry[node.Location], node)
+		}
 	}
-	final := renderNodes(nodes)
-	if err := os.WriteFile("index.html", []byte(generateFinalPanel(nodes, final, nodes[0].Delay)), 0644); err != nil {
+	if err := os.RemoveAll(CountryDir); err != nil {
+		return err
+	}
+	if err := os.MkdirAll(CountryDir, 0755); err != nil {
+		return err
+	}
+	rendered := map[string]string{}
+	var countries []countryCount
+	for code, list := range byCountry {
+		links := renderNodes(list)
+		for i, node := range list {
+			rendered[node.Link] = links[i]
+		}
+		if err := writeList(filepath.Join(CountryDir, code+".txt"), links); err != nil {
+			return err
+		}
+		countries = append(countries, countryCount{code, len(list)})
+	}
+	sort.Slice(countries, func(i, j int) bool { return countries[i].Code < countries[j].Code })
+	fmt.Printf("%4d country lists in %s\n", len(countries), CountryDir)
+
+	top := nodes
+	if len(top) > MaxNodes {
+		top = top[:MaxNodes]
+	}
+	final := renderNodes(top)
+	inTop := map[string]bool{}
+	for i, node := range top {
+		rendered[node.Link] = final[i]
+		inTop[node.Link] = true
+	}
+
+	var cards []panelNode
+	perCountry := map[string]int{}
+	for _, node := range nodes {
+		if !inTop[node.Link] {
+			if node.Location == "XX" || perCountry[node.Location] >= MaxPanelPerCountry {
+				continue
+			}
+		}
+		perCountry[node.Location]++
+		cards = append(cards, panelNode{node, rendered[node.Link], inTop[node.Link]})
+	}
+
+	if err := os.WriteFile("index.html", []byte(generateFinalPanel(cards, countries, len(top), top[0].Delay)), 0644); err != nil {
 		return err
 	}
 	return writeList("cleaned_configs.txt", final)

@@ -8,6 +8,9 @@ const (
 	CandidatesFile  = "candidates.txt"
 	ResultsFile     = "results.jsonl"
 	CategoryDir     = "subs"
+	CountryDir      = "subs/countries"
+	// Extra configs per country shown on the dashboard beyond the overall top list.
+	MaxPanelPerCountry = 10
 )
 
 // The test URLs must match the --test-urls list passed to xray-knife in the workflow.

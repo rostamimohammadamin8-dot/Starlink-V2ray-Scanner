@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"encoding/json"
+	"net"
 	"net/http"
 	"os"
 	"strings"
@@ -16,8 +17,13 @@ type endpointResult struct {
 }
 
 type testResult struct {
-	Link      string           `json:"link"`
-	Location  string           `json:"location"`
+	Link     string `json:"link"`
+	Location string `json:"location"`
+	// ExitIP is the address the test endpoints saw, reported by xray-knife as "ip".
+	ExitIP   string `json:"ip"`
+	Protocol struct {
+		Address string `json:"address"`
+	} `json:"protocol"`
 	Endpoints []endpointResult `json:"endpoints"`
 }
 
@@ -29,6 +35,8 @@ type rankedNode struct {
 	YouTube  bool
 	Insta    bool
 	Gaming   bool
+	ExitIP   string
+	StaticIP bool
 }
 
 func classify(result testResult) (rankedNode, bool) {
@@ -50,6 +58,8 @@ func classify(result testResult) (rankedNode, bool) {
 		endpoints[geminiTestLabel].Code == http.StatusOK &&
 		!aiRestrictedCountries[location]
 	instagram := endpoints[instagramTestLabel].Code
+	exitIP := net.ParseIP(result.ExitIP)
+	serverIP := net.ParseIP(result.Protocol.Address)
 	return rankedNode{
 		Link:     result.Link,
 		Location: location,
@@ -58,6 +68,9 @@ func classify(result testResult) (rankedNode, bool) {
 		YouTube:  endpoints[youtubeTestLabel].Code == http.StatusNoContent,
 		Insta:    (instagram >= 200 && instagram < 400) || instagram == http.StatusTooManyRequests,
 		Gaming:   base.Delay <= MaxGamingDelay,
+		ExitIP:   ipString(exitIP),
+		// Traffic leaves from the server itself rather than a CDN or rotating pool.
+		StaticIP: exitIP != nil && serverIP != nil && exitIP.Equal(serverIP),
 	}, true
 }
 
@@ -83,22 +96,45 @@ func readResults(path string) ([]rankedNode, error) {
 	return nodes, scanner.Err()
 }
 
-func nodeTags(node rankedNode) string {
-	var tags []string
+type nodeTag struct {
+	Key   string
+	Label string
+}
+
+func nodeTagList(node rankedNode) []nodeTag {
+	var tags []nodeTag
 	if node.AI {
-		tags = append(tags, "AI")
+		tags = append(tags, nodeTag{"ai", "AI"})
 	}
 	if node.Gaming {
-		tags = append(tags, "Gaming")
+		tags = append(tags, nodeTag{"gaming", "Gaming"})
 	}
 	if node.YouTube {
-		tags = append(tags, "YouTube")
+		tags = append(tags, nodeTag{"youtube", "YouTube"})
 	}
 	if node.Insta {
-		tags = append(tags, "Instagram")
+		tags = append(tags, nodeTag{"instagram", "Instagram"})
+	}
+	if node.StaticIP {
+		tags = append(tags, nodeTag{"static", "StaticIP"})
 	}
 	if len(tags) == 0 {
-		return "Web"
+		tags = append(tags, nodeTag{"web", "Web"})
 	}
-	return strings.Join(tags, " · ")
+	return tags
+}
+
+func nodeTags(node rankedNode) string {
+	labels := make([]string, 0, 5)
+	for _, tag := range nodeTagList(node) {
+		labels = append(labels, tag.Label)
+	}
+	return strings.Join(labels, " · ")
+}
+
+func ipString(ip net.IP) string {
+	if ip == nil {
+		return ""
+	}
+	return ip.String()
 }
